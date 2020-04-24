@@ -180,24 +180,24 @@
                                         <a href="" class="author">
                                             jpple
                                         </a>
-                                        <h3><a href="product-details.html">Rpple iPad with Retina Display
+                                        <h3><a href="{{asset('/product-details')}}">Rpple iPad with Retina Display
                                                 MD510LL/A</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-1.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-1.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -221,24 +221,24 @@
                                         <a href="" class="author">
                                             Bpple
                                         </a>
-                                        <h3><a href="product-details.html">Koss KPH7 Lightweight Portable
+                                        <h3><a href="{{asset('/product-details')}}">Koss KPH7 Lightweight Portable
                                                 Headphone</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-2.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-3.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -262,24 +262,24 @@
                                         <a href="" class="author">
                                             Cpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats EP Wired On-Ear Headphone-Black</a>
+                                        <h3><a href="{{asset('/product-details')}}">Beats EP Wired On-Ear Headphone-Black</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-3.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-2.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -303,24 +303,24 @@
                                         <a href="" class="author">
                                             Dpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats Solo2 Solo 2 Wired On-Ear
+                                        <h3><a href="{{asset('/product-details')}}">Beats Solo2 Solo 2 Wired On-Ear
                                                 Headphone</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-4.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-5.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -344,24 +344,24 @@
                                         <a href="" class="author">
                                             Lpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats Solo3 Wireless On-Ear Headphones
+                                        <h3><a href="{{asset('/product-details')}}">Beats Solo3 Wireless On-Ear Headphones
                                                 2</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-5.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-4.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -385,24 +385,24 @@
                                         <a href="" class="author">
                                             Fpple
                                         </a>
-                                        <h3><a href="product-details.html">3 Ways To Have (A) More Appealing
+                                        <h3><a href="{{asset('/product-details')}}">3 Ways To Have (A) More Appealing
                                                 BOOK</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-6.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-7.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -426,24 +426,24 @@
                                         <a href="" class="author">
                                             Epple
                                         </a>
-                                        <h3><a href="product-details.html">In 10 Minutes, I'll Give You The Truth
+                                        <h3><a href="{{asset('/product-details')}}">In 10 Minutes, I'll Give You The Truth
                                                 About</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-7.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-6.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -467,24 +467,24 @@
                                         <a href="" class="author">
                                             Fpple
                                         </a>
-                                        <h3><a href="product-details.html">5 Ways To Get Through To Your BOOK</a>
+                                        <h3><a href="{{asset('/product-details')}}">5 Ways To Get Through To Your BOOK</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-8.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-9.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -508,24 +508,24 @@
                                         <a href="" class="author">
                                             Gpple
                                         </a>
-                                        <h3><a href="product-details.html">What Can You Do To Save Your BOOK</a>
+                                        <h3><a href="{{asset('/product-details')}}">What Can You Do To Save Your BOOK</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-9.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-8.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -549,24 +549,24 @@
                                         <a href="#" class="author">
                                             Hpple
                                         </a>
-                                        <h3><a href="product-details.html">From Destruction By Social Media?</a>
+                                        <h3><a href="{{asset('/product-details')}}">From Destruction By Social Media?</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-10.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-11.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -590,24 +590,24 @@
                                         <a href="" class="author">
                                             Gpple
                                         </a>
-                                        <h3><a href="product-details.html">Find Out More About BOOK By Social
+                                        <h3><a href="{{asset('/product-details')}}">Find Out More About BOOK By Social
                                                 Media?</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-11.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-10.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -631,24 +631,24 @@
                                         <a href="" class="author">
                                             Vpple
                                         </a>
-                                        <h3><a href="product-details.html">Read This Controversial BOOK By
+                                        <h3><a href="{{asset('/product-details')}}">Read This Controversial BOOK By
                                                 Social Media?</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-12.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-11.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -688,24 +688,24 @@
                                         <a href="" class="author">
                                             jpple
                                         </a>
-                                        <h3><a href="product-details.html">Bpple iPad with Retina Display
+                                        <h3><a href="{{asset('/product-details')}}">Bpple iPad with Retina Display
                                                 MD510LL/A</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-3.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-1.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -729,24 +729,24 @@
                                         <a href="" class="author">
                                             Bpple
                                         </a>
-                                        <h3><a href="product-details.html">Koss KPH7 Lightweight Portable
+                                        <h3><a href="{{asset('/product-details')}}">Koss KPH7 Lightweight Portable
                                                 Headphone</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-2.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-3.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -770,24 +770,24 @@
                                         <a href="" class="author">
                                             Cpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats EP Wired On-Ear
+                                        <h3><a href="{{asset('/product-details')}}">Beats EP Wired On-Ear
                                                 Headphone-Black</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-1.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-2.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -811,24 +811,24 @@
                                         <a href="" class="author">
                                             Dpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats Solo2 Solo 2 Wired On-Ear
+                                        <h3><a href="{{asset('/product-details')}}">Beats Solo2 Solo 2 Wired On-Ear
                                                 Headphone</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-4.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-5.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -852,24 +852,24 @@
                                         <a href="" class="author">
                                             Lpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats Solo3 Wireless On-Ear
+                                        <h3><a href="{{asset('/product-details')}}">Beats Solo3 Wireless On-Ear
                                                 Headphones 2</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-7.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-4.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -893,24 +893,24 @@
                                         <a href="" class="author">
                                             Fpple
                                         </a>
-                                        <h3><a href="product-details.html">3 Ways To Have (A) More Appealing
+                                        <h3><a href="{{asset('/product-details')}}">3 Ways To Have (A) More Appealing
                                                 BOOK</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-6.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-7.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -934,24 +934,24 @@
                                         <a href="" class="author">
                                             Epple
                                         </a>
-                                        <h3><a href="product-details.html">In 10 Minutes, I'll Give You The
+                                        <h3><a href="{{asset('/product-details')}}">In 10 Minutes, I'll Give You The
                                                 Truth About</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-5.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-6.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -975,24 +975,24 @@
                                         <a href="" class="author">
                                             Fpple
                                         </a>
-                                        <h3><a href="product-details.html">5 Ways To Get Through To Your
+                                        <h3><a href="{{asset('/product-details')}}">5 Ways To Get Through To Your
                                                 BOOK</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-8.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-9.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1016,24 +1016,24 @@
                                         <a href="" class="author">
                                             Gpple
                                         </a>
-                                        <h3><a href="product-details.html">What Can You Do To Save Your BOOK</a>
+                                        <h3><a href="{{asset('/product-details')}}">What Can You Do To Save Your BOOK</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-3.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-8.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1057,24 +1057,24 @@
                                         <a href="" class="author">
                                             Hpple
                                         </a>
-                                        <h3><a href="product-details.html">From Destruction By Social Media?</a>
+                                        <h3><a href="{{asset('/product-details')}}">From Destruction By Social Media?</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-9.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-11.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1098,24 +1098,24 @@
                                         <a href="" class="author">
                                             Gpple
                                         </a>
-                                        <h3><a href="product-details.html">Find Out More About BOOK By Social
+                                        <h3><a href="{{asset('/product-details')}}">Find Out More About BOOK By Social
                                                 Media?</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-10.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-10.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1139,24 +1139,24 @@
                                         <a href="" class="author">
                                             Apple
                                         </a>
-                                        <h3><a href="product-details.html">Read This Controversial BOOK By
+                                        <h3><a href="{{asset('/product-details')}}">Read This Controversial BOOK By
                                                 Social Media?</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-9.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-11.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1196,24 +1196,24 @@
                                         <a href="" class="author">
                                             jpple
                                         </a>
-                                        <h3><a href="product-details.html">Zpple fPad with Retina Display
+                                        <h3><a href="{{asset('/product-details')}}">Zpple fPad with Retina Display
                                                 MD510LL/A</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-1.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-1.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1237,24 +1237,24 @@
                                         <a href="" class="author">
                                             Bpple
                                         </a>
-                                        <h3><a href="product-details.html">Koss KPH7 Lightweight Portable
+                                        <h3><a href="{{asset('/product-details')}}">Koss KPH7 Lightweight Portable
                                                 Headphone</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-4.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-3.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1278,24 +1278,24 @@
                                         <a href="" class="author">
                                             Cpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats EP Wired On-Ear
+                                        <h3><a href="{{asset('/product-details')}}">Beats EP Wired On-Ear
                                                 Headphone-Black</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-3.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-2.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1319,24 +1319,24 @@
                                         <a href="" class="author">
                                             Dpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats Solo2 Solo 2 Wired On-Ear
+                                        <h3><a href="{{asset('/product-details')}}">Beats Solo2 Solo 2 Wired On-Ear
                                                 Headphone</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-1.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-5.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1360,24 +1360,24 @@
                                         <a href="" class="author">
                                             Lpple
                                         </a>
-                                        <h3><a href="product-details.html">Beats Solo3 Wireless On-Ear
+                                        <h3><a href="{{asset('/product-details')}}">Beats Solo3 Wireless On-Ear
                                                 Headphones 2</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-11.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-4.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1401,24 +1401,24 @@
                                         <a href="" class="author">
                                             Fpple
                                         </a>
-                                        <h3><a href="product-details.html">3 Ways To Have (A) More Appealing
+                                        <h3><a href="{{asset('/product-details')}}">3 Ways To Have (A) More Appealing
                                                 BOOK</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-10.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-7.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1442,24 +1442,24 @@
                                         <a href="" class="author">
                                             Epple
                                         </a>
-                                        <h3><a href="product-details.html">In 10 Minutes, I'll Give You The
+                                        <h3><a href="{{asset('/product-details')}}">In 10 Minutes, I'll Give You The
                                                 Truth About</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-9.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-6.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1483,24 +1483,24 @@
                                         <a href="" class="author">
                                             Fpple
                                         </a>
-                                        <h3><a href="product-details.html">5 Ways To Get Through To Your
+                                        <h3><a href="{{asset('/product-details')}}">5 Ways To Get Through To Your
                                                 BOOK</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-8.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-9.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1524,24 +1524,24 @@
                                         <a href="" class="author">
                                             Gpple
                                         </a>
-                                        <h3><a href="product-details.html">What Can You Do To Save Your BOOK</a>
+                                        <h3><a href="{{asset('/product-details')}}">What Can You Do To Save Your BOOK</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-5.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-8.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1565,24 +1565,24 @@
                                         <a href="" class="author">
                                             Hpple
                                         </a>
-                                        <h3><a href="product-details.html">From Destruction By Social Media?</a>
+                                        <h3><a href="{{asset('/product-details')}}">From Destruction By Social Media?</a>
                                         </h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-3.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-11.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1606,24 +1606,24 @@
                                         <a href="" class="author">
                                             Gpple
                                         </a>
-                                        <h3><a href="product-details.html">Find Out More About BOOK By Social
+                                        <h3><a href="{{asset('/product-details')}}">Find Out More About BOOK By Social
                                                 Media?</a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
                                             <img src="image/products/product-11.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-10.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1647,7 +1647,7 @@
                                         <a href="" class="author">
                                             Apple
                                         </a>
-                                        <h3><a href="product-details.html">Read This Controversial BOOK By
+                                        <h3><a href="{{asset('/product-details')}}">Read This Controversial BOOK By
                                                 Social Media? Out More</a>
                                         </h3>
                                     </div>
@@ -1655,17 +1655,17 @@
                                         <div class="card-image">
                                             <img src="image/products/product-12.jpg" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a href="{{asset('/product-details')}}" class="hover-image">
                                                     <img src="image/products/product-11.jpg" alt="">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="cart.html" class="single-btn">
+                                                    <a href="{{asset('/cart')}}" class="single-btn">
                                                         <i class="fas fa-shopping-basket"></i>
                                                     </a>
-                                                    <a href="wishlist.html" class="single-btn">
+                                                    <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
-                                                    <a href="compare.html" class="single-btn">
+                                                    <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
                                                     <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1715,7 +1715,7 @@
                             <a href="" class="author">
                                 Ypple
                             </a>
-                            <h3><a href="product-details.html">Do You Really Need It? This Will Help You
+                            <h3><a href="{{asset('/product-details')}}">Do You Really Need It? This Will Help You
                                 </a>
                             </h3>
                         </div>
@@ -1723,17 +1723,17 @@
                             <div class="card-image">
                                 <img src="image/products/product-2.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-1.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1760,23 +1760,23 @@
                             <a href="#" class="author">
                                 Upple
                             </a>
-                            <h3><a href="product-details.html">Here Is A Quick Cure For Book</a></h3>
+                            <h3><a href="{{asset('/product-details')}}">Here Is A Quick Cure For Book</a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-1.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-1.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1803,23 +1803,23 @@
                             <a href="#" class="author">
                                 Ypple
                             </a>
-                            <h3><a href="product-details.html">a Half Very Simple Things You To Save</a></h3>
+                            <h3><a href="{{asset('/product-details')}}">a Half Very Simple Things You To Save</a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-3.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-2.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1846,24 +1846,24 @@
                             <a href="#" class="author">
                                 Epple
                             </a>
-                            <h3><a href="product-details.html">What You Can Learn From Bill Gates</a>
+                            <h3><a href="{{asset('/product-details')}}">What You Can Learn From Bill Gates</a>
                             </h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-5.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-4.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1890,23 +1890,23 @@
                             <a href="#" class="author">
                                 Rpple
                             </a>
-                            <h3><a href="product-details.html">Create Better BOOK With The Help Of Your</a></h3>
+                            <h3><a href="{{asset('/product-details')}}">Create Better BOOK With The Help Of Your</a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-6.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-4.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1933,24 +1933,24 @@
                             <a href="#" class="author">
                                 Tpple
                             </a>
-                            <h3><a href="product-details.html">Turn Your BOOK Into High Machine</a>
+                            <h3><a href="{{asset('/product-details')}}">Turn Your BOOK Into High Machine</a>
                             </h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-8.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-7.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -1977,24 +1977,24 @@
                             <a href="#" class="author">
                                 Mpple
                             </a>
-                            <h3><a href="product-details.html">Revolutionize Your BOOK With These Easy
+                            <h3><a href="{{asset('/product-details')}}">Revolutionize Your BOOK With These Easy
                                 </a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-13.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-11.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -2059,7 +2059,7 @@
                                             <a href="#" class="author">
                                                 Rpple
                                             </a>
-                                            <h3><a href="product-details.html">Do You Really Need It? This
+                                            <h3><a href="{{asset('/product-details')}}">Do You Really Need It? This
                                                     Will Help You
                                                 </a></h3>
                                         </div>
@@ -2081,7 +2081,7 @@
                                             <a href="#" class="author">
                                                 Epple
                                             </a>
-                                            <h3><a href="product-details.html">Here Is Quick Cure BOOK This
+                                            <h3><a href="{{asset('/product-details')}}">Here Is Quick Cure BOOK This
                                                     Will Help
 
                                                 </a></h3>
@@ -2104,7 +2104,7 @@
                                             <a href="#" class="author">
                                                 Wpple
                                             </a>
-                                            <h3><a href="product-details.html">Do You Really Need It? This
+                                            <h3><a href="{{asset('/product-details')}}">Do You Really Need It? This
                                                     Will Help You
 
                                                 </a></h3>
@@ -2127,7 +2127,7 @@
                                             <a href="#" class="author">
                                                 Ypple
                                             </a>
-                                            <h3><a href="product-details.html">Very Simple Things You
+                                            <h3><a href="{{asset('/product-details')}}">Very Simple Things You
                                                     Can Save BOOK
 
 
@@ -2153,7 +2153,7 @@
                                             <a href="#" class="author">
                                                 Mople
                                             </a>
-                                            <h3><a href="product-details.html">What You Can Learn From Bill Gates
+                                            <h3><a href="{{asset('/product-details')}}">What You Can Learn From Bill Gates
 
                                                 </a></h3>
                                         </div>
@@ -2175,7 +2175,7 @@
                                             <a href="#" class="author">
                                                 Cpple
                                             </a>
-                                            <h3><a href="product-details.html">3 Ways Create Better BOOK With
+                                            <h3><a href="{{asset('/product-details')}}">3 Ways Create Better BOOK With
                                                     Help
 
                                                 </a></h3>
@@ -2226,7 +2226,7 @@
                                 <a href="#" class="author">
                                     Rpple
                                 </a>
-                                <h3><a href="product-details.html">Revolutionize Your BOOK With</a></h3>
+                                <h3><a href="{{asset('/product-details')}}">Revolutionize Your BOOK With</a></h3>
                             </div>
                             <div class="price-block">
                                 <span class="price">£51.20</span>
@@ -2246,7 +2246,7 @@
                                 <a href="#" class="author">
                                     Dpple
                                 </a>
-                                <h3><a href="product-details.html">Turn Your BOOK Into High Machine</a>
+                                <h3><a href="{{asset('/product-details')}}">Turn Your BOOK Into High Machine</a>
                                 </h3>
                             </div>
                             <div class="price-block">
@@ -2267,7 +2267,7 @@
                                 <a href="#" class="author">
                                     Epple
                                 </a>
-                                <h3><a href="product-details.html">BOOK: Do You Really Need It? This </a></h3>
+                                <h3><a href="{{asset('/product-details')}}">BOOK: Do You Really Need It? This </a></h3>
                             </div>
                             <div class="price-block">
                                 <span class="price">£51.20</span>
@@ -2287,7 +2287,7 @@
                                 <a href="#" class="author">
                                     Ppple
                                 </a>
-                                <h3><a href="product-details.html">Here Is A Quick Cure For Book</a>
+                                <h3><a href="{{asset('/product-details')}}">Here Is A Quick Cure For Book</a>
                                 </h3>
                             </div>
                             <div class="price-block">
@@ -2308,7 +2308,7 @@
                                 <a href="#" class="author">
                                     Ypple
                                 </a>
-                                <h3><a href="product-details.html">What You Can Learn From Bill Gates</a>
+                                <h3><a href="{{asset('/product-details')}}">What You Can Learn From Bill Gates</a>
                                 </h3>
                             </div>
                             <div class="price-block">
@@ -2329,7 +2329,7 @@
                                 <a href="#" class="author">
                                     Wpple
                                 </a>
-                                <h3><a href="product-details.html">3 Ways Create Better BOOK With</a></h3>
+                                <h3><a href="{{asset('/product-details')}}">3 Ways Create Better BOOK With</a></h3>
                             </div>
                             <div class="price-block">
                                 <span class="price">£51.20</span>
@@ -2408,24 +2408,24 @@
                             <a href="#" class="author">
                                 Lpple
                             </a>
-                            <h3><a href="product-details.html">Revolutionize Your BOOK With These Easy
+                            <h3><a href="{{asset('/product-details')}}">Revolutionize Your BOOK With These Easy
                                 </a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-2.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-1.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -2449,24 +2449,24 @@
                             <a href="" class="author">
                                 Jpple
                             </a>
-                            <h3><a href="product-details.html">Turn Your BOOK Into High Machine</a>
+                            <h3><a href="{{asset('/product-details')}}">Turn Your BOOK Into High Machine</a>
                             </h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-2.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-1.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -2490,23 +2490,23 @@
                             <a href="" class="author">
                                 Wpple
                             </a>
-                            <h3><a href="product-details.html">Create Better BOOK With The Help Of Your</a></h3>
+                            <h3><a href="{{asset('/product-details')}}">Create Better BOOK With The Help Of Your</a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-3.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-2.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -2530,24 +2530,24 @@
                             <a href="" class="author">
                                 Epple
                             </a>
-                            <h3><a href="product-details.html">What You Can Learn From Bill Gates</a>
+                            <h3><a href="{{asset('/product-details')}}">What You Can Learn From Bill Gates</a>
                             </h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-5.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-4.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -2571,23 +2571,23 @@
                             <a href="" class="author">
                                 Hpple
                             </a>
-                            <h3><a href="product-details.html">a Half Very Simple Things You To Save</a></h3>
+                            <h3><a href="{{asset('/product-details')}}">a Half Very Simple Things You To Save</a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-6.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-4.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -2611,23 +2611,23 @@
                             <a href="#" class="author">
                                 Bpple
                             </a>
-                            <h3><a href="product-details.html">Here Is A Quick Cure For Book</a></h3>
+                            <h3><a href="{{asset('/product-details')}}">Here Is A Quick Cure For Book</a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
                                 <img src="image/products/product-8.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-7.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"
@@ -2651,7 +2651,7 @@
                             <a href="#" class="author">
                                 zpple
                             </a>
-                            <h3><a href="product-details.html">Do You Really Need It? This Will Help You
+                            <h3><a href="{{asset('/product-details')}}">Do You Really Need It? This Will Help You
                                 </a>
                             </h3>
                         </div>
@@ -2659,17 +2659,17 @@
                             <div class="card-image">
                                 <img src="image/products/product-13.jpg" alt="">
                                 <div class="hover-contents">
-                                    <a href="product-details.html" class="hover-image">
+                                    <a href="{{asset('/product-details')}}" class="hover-image">
                                         <img src="image/products/product-11.jpg" alt="">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="cart.html" class="single-btn">
+                                        <a href="{{asset('/cart')}}" class="single-btn">
                                             <i class="fas fa-shopping-basket"></i>
                                         </a>
-                                        <a href="wishlist.html" class="single-btn">
+                                        <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
-                                        <a href="compare.html" class="single-btn">
+                                        <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
                                         <a href="#" data-toggle="modal" data-target="#quickModal"

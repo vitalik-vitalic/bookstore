@@ -20,5 +20,13 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'BaseController@getIndex')->name('home');
+Route::get('/shop', 'ShopController@getIndex')->name('shop');
+Route::get('/product-details', 'ProductDetailsController@getIndex')->name('product-details');
+Route::get('/contact', 'ContactController@getIndex')->name('contact');
+Route::get('/cart', 'CartController@getIndex')->name('cart');
+Route::get('/wishlist', 'WishlistController@getIndex')->name('wishlist');
+Route::get('/compare', 'CompareController@getIndex')->name('compare');
+Route::get('/login-register', 'LoginRegisterController@getIndex')->name('login-register');
+Route::get('/checkout', 'CheckoutController@getIndex')->name('checkout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*Route::get('/home', 'HomeController@index')->name('home');*/
