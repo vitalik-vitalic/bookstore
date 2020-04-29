@@ -28,5 +28,7 @@ Route::get('/wishlist', 'WishlistController@getIndex')->name('wishlist');
 Route::get('/compare', 'CompareController@getIndex')->name('compare');
 Route::get('/login-register', 'LoginRegisterController@getIndex')->name('login-register');
 Route::get('/checkout', 'CheckoutController@getIndex')->name('checkout');
+Route::get('/blog', 'BlogController@getIndex')->name('blog');
+Route::get('/blog-details', 'BlogDetailsController@getIndex')->name('blog-details');
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/
