@@ -4,7 +4,7 @@ namespace App\Providers\ViewComposers;
 
 use Illuminate\Contracts\View\View;
 use App\Catalog;
-use App\Menu;
+use App\MenuTitles;
 use App\Information;
 use App\Extras;
 
@@ -15,7 +15,7 @@ class BaseComposer
         /*Categories items*/
         $categories = Catalog::orderBy('name')->get();
         /*Main menu items*/
-        $menus = Menu::orderBy('id')->get();
+        $menus = MenuTitles::orderBy('id')->get();
         /*Information items*/
         $information = Information::orderBy('id')->get();
         /*Extras items*/

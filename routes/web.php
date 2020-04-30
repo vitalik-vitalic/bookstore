@@ -19,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
 Route::get('/', 'BaseController@getIndex')->name('home');
 Route::get('/home', 'BaseController@getIndex')->name('home');
 Route::get('/shop', 'ShopController@getIndex')->name('shop');
