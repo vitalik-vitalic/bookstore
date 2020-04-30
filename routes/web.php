@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', 'BaseController@getIndex')->name('home');
+Route::get('/home', 'BaseController@getIndex')->name('home');
 Route::get('/shop', 'ShopController@getIndex')->name('shop');
 Route::get('/product-details', 'ProductDetailsController@getIndex')->name('product-details');
 Route::get('/contact', 'ContactController@getIndex')->name('contact');
@@ -30,5 +31,6 @@ Route::get('/login-register', 'LoginRegisterController@getIndex')->name('login-r
 Route::get('/checkout', 'CheckoutController@getIndex')->name('checkout');
 Route::get('/blog', 'BlogController@getIndex')->name('blog');
 Route::get('/blog-details', 'BlogDetailsController@getIndex')->name('blog-details');
+Route::get('/my-account', 'MyAccountController@getIndex')->name('my-account');
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/

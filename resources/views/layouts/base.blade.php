@@ -97,8 +97,12 @@
                         <div class="main-navigation flex-lg-right">
                             <div class="cart-widget">
                                 <div class="login-block">
+                                    @if(Auth()->user())
+                                    <a href="{{asset('/my-account')}}" class="font-weight-bold">My account</a>
+                                    @else
                                     <a href="{{asset('/login-register')}}" class="font-weight-bold">Login</a> <br>
                                     <span>or</span><a href="{{asset('/login-register')}}">Register</a>
+                                    @endif
                                 </div>
                                 <div class="cart-block">
                                     <div class="cart-total">
@@ -435,9 +439,7 @@
 <!-- Use Minified Plugins Version For Fast Page Load -->
 <script src="js/plugins.js"></script>
 <script src="js/ajax-mail.js"></script>
-@if((Route::currentRouteName() == 'contact'))
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
-@endif
+@stack('scripts')
 <script src="js/custom.js"></script>
 </body>
 

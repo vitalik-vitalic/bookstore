@@ -1,5 +1,8 @@
 @extends('layouts.base')
 @section('content')
+@push('scripts')
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2D8wrWMY3XZnuHO6C31uq90JiuaFzGws"></script>
+@endpush
     <section class="breadcrumb-section">
         <h2 class="sr-only">Site Breadcrumb</h2>
         <div class="container">
