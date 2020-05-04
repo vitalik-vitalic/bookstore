@@ -136,21 +136,23 @@
                     </div>
                 </div>
                 <div class="shop-product-wrap grid with-pagination row space-db--30 shop-border">
+                    @if(isset($products))
+                    @foreach($products as $product)
                     <div class="col-lg-4 col-sm-6">
                         <div class="product-card">
                             <div class="product-grid-content">
                                 <div class="product-header">
                                     <a href="" class="author">
-                                        Epple
+                                        {{$product->author}}
                                     </a>
-                                    <h3><a href="{{asset('/product-details')}}">Here Is A Quick Cure For Book</a></h3>
+                                    <h3><a href="{{asset('/product-details')}}">{{$product->name}}</a></h3>
                                 </div>
                                 <div class="product-card--body">
                                     <div class="card-image">
-                                        <img src="image/products/product-2.jpg" alt="">
+                                        <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                         <div class="hover-contents">
                                             <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-1.jpg" alt="">
+                                                <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                             </a>
                                             <div class="hover-btns">
                                                 <a href="{{asset('/cart')}}" class="single-btn">
@@ -170,15 +172,15 @@
                                         </div>
                                     </div>
                                     <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
+                                        <span class="price">{{$product->price}}</span>
+                                        <del class="price-old">{{$product->price}}</del>
+                                        <span class="price-discount">0%</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="product-list-content">
                                 <div class="card-image">
-                                    <img src="image/products/product-3.jpg" alt="">
+                                    <img src="{{asset('image/products/product-3.jpg')}}" alt="">
                                 </div>
                                 <div class="product-card--body">
                                     <div class="product-header">
@@ -217,6 +219,8 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+                    @endif{{--
                     <div class="col-lg-4 col-sm-6">
                         <div class="product-card">
                             <div class="product-grid-content">
@@ -784,7 +788,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
                 <!-- Pagination Block -->
                 <div class="row pt--30">
@@ -830,19 +834,19 @@
               "asNavFor": ".product-slider-nav"
               }'>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-1.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-1.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-2.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-2.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-3.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-3.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-4.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-4.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-5.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-5.jpg')}}" alt="">
                                             </div>
                                         </div>
                                         <!-- Product Details Slider Nav -->
@@ -859,19 +863,19 @@
               "focusOnSelect": true
               }'>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-1.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-1.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-2.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-2.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-3.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-3.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-4.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-4.jpg')}}" alt="">
                                             </div>
                                             <div class="single-slide">
-                                                <img src="image/products/product-details-5.jpg" alt="">
+                                                <img src="{{asset('image/products/product-details-5.jpg')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -954,7 +958,24 @@
                     <div class="single-block">
                         <h3 class="sidebar-title">Categories</h3>
                         <ul class="sidebar-menu--shop">
-                            <li><a href="">Accessories (5)</a></li>
+                            @foreach($categories as $one)
+                                @php
+                                    $totalProducts = 0;
+                                @endphp
+                                @if($one->parent_id == 0)
+                                    @foreach($productsTotal as $item)
+                                        @foreach($item as $key => $value)
+                                        @if(($one->name === $key) && ($value !== 0))
+                                            @php
+                                                $totalProducts = $value;
+                                            @endphp
+                                        @endif
+                                        @endforeach
+                                    @endforeach
+                                    <li><a href="{{asset('/shop/'.$one->id)}}">{{$one->name}} ({{$totalProducts}})</a></li>
+                                @endif
+                            @endforeach
+                            {{--<li><a href="">Accessories (5)</a></li>
                             <li><a href="">Arts & Photography (10)</a></li>
                             <li><a href="">Biographies (16)</a></li>
                             <li><a href="">Business & Money (0)</a></li>
@@ -973,7 +994,7 @@
                                     <li><a href="">Drills (2)</a></li>
                                     <li><a href="">Sanders (1)</a></li>
                                 </ul>
-                            </li>
+                            </li>--}}
                         </ul>
                     </div>
                     <!-- Price -->
@@ -1018,7 +1039,7 @@
                     <!-- Promotion Block -->
                     <div class="single-block">
                         <a href="" class="promo-image sidebar">
-                            <img src="image/others/home-side-promo.jpg" alt="">
+                            <img src="{{asset('image/others/home-side-promo.jpg')}}" alt="">
                         </a>
                     </div>
                 </div>

@@ -7,9 +7,9 @@
     <title>Pustok - Book Store HTML Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Use Minified Plugins Version For Fast Page Load -->
-    <link rel="stylesheet" type="text/css" media="screen" href="css/plugins.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="image/favicon.ico">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/plugins.css')}}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/main.css')}}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('image/favicon.ico')}}">
 </head>
 <body>
 <div class="site-wrapper" id="top">
@@ -19,7 +19,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 ">
                         <a href="{{asset('/')}}" class="site-brand">
-                            <img src="image/logo.png" alt="">
+                            <img src="{{asset('image/logo.png')}}" alt="">
                         </a>
                     </div>
                     <div class="col-lg-3">
@@ -57,7 +57,38 @@
                                         class="fa fa-bars"></i>Browse
                                     categories</a>
                                 <ul class="category-menu">
-                                    @php
+                                    @foreach($result as $row)
+
+                                        @php
+                                            $class = '';
+                                        @endphp
+
+                                        @foreach($result as $row2)
+                                            @if($row->id === $row2->parent_id)
+                                                @php
+                                                    $class = 'has-children';
+                                                @endphp
+                                            @endif
+                                        @endforeach
+
+                                        @if($row->parent_id === 0)
+                                            <li class="cat-item {{$class}}">
+                                            <a href="{{asset('shop/'.$row->id)}}" data-href="{{$row->id}}">{{$row->name}}</a>
+                                                @if($class !== '')
+                                                    <ul class="sub-menu">
+                                                @foreach($result as $row3)
+                                                    @if($row->id == $row3->parent_id)
+                                                        <li><a href="{{asset('shop/'.$row3->id)}}" data-href="{{$row3->id}}">{{$row3->name}}</a></li>
+                                                    @endif
+                                                @endforeach
+                                                    </ul>
+                                                @endif
+                                            </li>
+                                        @endif
+                                        @endforeach
+
+
+                                    {{--@php
                                         //$result from VarsServiceProvider
                                         foreach($result as $row) {
                                             $class = '';
@@ -69,12 +100,12 @@
 
                                             if($row->parent_id === 0){
                                                 echo '<li class="cat-item '.$class.'">';
-                                                echo '<a href="#">'.$row->name.'</a> ';
+                                                echo '<a href="shop/'.$row->id.'" data-href="'.$row->id.'">'.$row->name.'</a> ';
                                                 if($class !== ''){
                                                     echo '<ul class="sub-menu">';
                                                     foreach ($result as $row3){
                                                         if($row->id == $row3->parent_id){
-                                                            echo '<li><a href="#">'.$row3->name.'</a></li>';
+                                                            echo '<li><a href="shop/'.$row3->id.'" data-href="'.$row3->id.'">'.$row3->name.'</a></li>';
                                                     }
                                                 }
                                                     echo '</ul>';
@@ -82,7 +113,7 @@
                                                 echo '</li>';
                                             }
                                         }
-                                    @endphp
+                                    @endphp--}}
                                 </ul>
                             </div>
                         </nav>
@@ -121,7 +152,7 @@
                                         <div class=" single-cart-block ">
                                             <div class="cart-product">
                                                 <a href="{{asset('/product-details')}}" class="image">
-                                                    <img src="image/products/cart-product-1.jpg" alt="">
+                                                    <img src="{{asset('image/products/cart-product-1.jpg')}}" alt="">
                                                 </a>
                                                 <div class="content">
                                                     <h3 class="title"><a href="{{asset('/product-details')}}">Kodak PIXPRO
@@ -155,7 +186,7 @@
                 <div class="row align-items-sm-end align-items-center">
                     <div class="col-md-4 col-7">
                         <a href="{{asset('/')}}" class="site-brand">
-                            <img src="image/logo.png" alt="">
+                            <img src="{{asset('image/logo.png')}}" alt="">
                         </a>
                     </div>
                     <div class="col-md-5 order-3 order-md-2">
@@ -290,7 +321,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-4">
                     <a href="{{asset('/')}}" class="site-brand">
-                        <img src="image/logo.png" alt="">
+                        <img src="{{asset('image/logo.png')}}" alt="">
                     </a>
                 </div>
                 <div class="col-lg-8">
@@ -328,28 +359,28 @@
                 {"breakpoint":320, "settings": {"slidesToShow": 1} }
             ]'>
             <div class="single-slide">
-                <img src="image/others/brand-1.jpg" alt="">
+                <img src="{{asset('image/others/brand-1.jpg')}}" alt="">
             </div>
             <div class="single-slide">
-                <img src="image/others/brand-2.jpg" alt="">
+                <img src="{{asset('image/others/brand-2.jpg')}}" alt="">
             </div>
             <div class="single-slide">
-                <img src="image/others/brand-3.jpg" alt="">
+                <img src="{{asset('image/others/brand-3.jpg')}}" alt="">
             </div>
             <div class="single-slide">
-                <img src="image/others/brand-4.jpg" alt="">
+                <img src="{{asset('image/others/brand-4.jpg')}}" alt="">
             </div>
             <div class="single-slide">
-                <img src="image/others/brand-5.jpg" alt="">
+                <img src="{{asset('image/others/brand-5.jpg')}}" alt="">
             </div>
             <div class="single-slide">
-                <img src="image/others/brand-6.jpg" alt="">
+                <img src="{{asset('image/others/brand-6.jpg')}}" alt="">
             </div>
             <div class="single-slide">
-                <img src="image/others/brand-1.jpg" alt="">
+                <img src="{{asset('image/others/brand-1.jpg')}}" alt="">
             </div>
             <div class="single-slide">
-                <img src="image/others/brand-2.jpg" alt="">
+                <img src="{{asset('image/others/brand-2.jpg')}}" alt="">
             </div>
         </div>
     </div>
@@ -363,7 +394,7 @@
             <div class=" col-xl-3 col-lg-4 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="brand-footer footer-title">
-                        <img src="image/logo--footer.png" alt="">
+                        <img src="{{asset('image/logo--footer.png')}}" alt="">
                     </div>
                     <div class="footer-contact">
                         <p><span class="label">Address:</span><span class="text">Example Street 98, HH2 BacHa, New
@@ -428,7 +459,7 @@
                 vel
                 magna volutpat, posuere eros</p>
             <a href="#" class="payment-block">
-                <img src="image/icon/payment.png" alt="">
+                <img src="{{asset('image/icon/payment.png')}}" alt="">
             </a>
             <p class="copyright-text">Copyright © 2019 <a href="#" class="author">Pustok</a>. All Right Reserved.
                 <br>
@@ -437,10 +468,10 @@
     </div>
 </footer>
 <!-- Use Minified Plugins Version For Fast Page Load -->
-<script src="js/plugins.js"></script>
-<script src="js/ajax-mail.js"></script>
+<script src="{{asset('js/plugins.js')}}"></script>
+<script src="{{asset('js/ajax-mail.js')}}"></script>
 @stack('scripts')
-<script src="js/custom.js"></script>
+<script src="{{asset('js/custom.js')}}"></script>
 </body>
 
 </html>
