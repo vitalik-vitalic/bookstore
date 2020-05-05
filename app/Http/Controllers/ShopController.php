@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
@@ -18,6 +19,9 @@ class ShopController extends Controller
 
     //
     public function getIndex(){
-        return view('shop');
+
+        $products = DB::table('products')->paginate(9);
+
+        return view('shop', compact('products'));
     }
 }

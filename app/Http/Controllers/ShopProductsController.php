@@ -17,7 +17,7 @@ class ShopProductsController extends Controller
         $tempArray = array();
 
         if($catalogItem->parent_id !== 0){
-            $products = Product::where('catalog_id',$id)->paginate(10);
+            $products = Product::where('catalog_id',$id)->paginate(9);
         }else{
             $catalogItems = Catalog::where('parent_id',$id)->get();
 
@@ -25,7 +25,7 @@ class ShopProductsController extends Controller
                 array_push($tempArray,$item->id);
             }
 
-            $products = Product::whereIn('catalog_id', $tempArray)->paginate(10);
+            $products = Product::whereIn('catalog_id', $tempArray)->paginate(9);
         }
 
         return view('shop', compact('products'));

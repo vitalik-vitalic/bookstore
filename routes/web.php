@@ -28,7 +28,7 @@ Route::get('/home', 'BaseController@getIndex')->name('home');
 Route::get('/shop', 'ShopController@getIndex')->name('shop');
 Route::get('/shop/{id}', 'ShopProductsController@index');
 
-Route::get('/product-details', 'ProductDetailsController@getIndex')->name('product-details');
+Route::get('/product-details/{id}', 'ProductDetailsController@getIndex')->name('product-details');
 Route::get('/contact', 'ContactController@getIndex')->name('contact');
 Route::get('/cart', 'CartController@getIndex')->name('cart');
 Route::get('/wishlist', 'WishlistController@getIndex')->name('wishlist');

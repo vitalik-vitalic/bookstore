@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductDetailsController extends Controller
 {
@@ -17,7 +18,10 @@ class ProductDetailsController extends Controller
     }
 
     //
-    public function getIndex(){
-        return view('product-details');
+    public function getIndex($id = null){
+
+        $productDetail = Product::where('id',$id)->first();
+
+        return view('product-details', compact('productDetail'));
     }
 }

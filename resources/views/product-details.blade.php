@@ -27,7 +27,7 @@
               "asNavFor": ".product-slider-nav"
               }'>
                     <div class="single-slide">
-                        <img src="image/products/product-details-1.jpg" alt="">
+                        <img src="{{asset('image/products/'.$productDetail->picture)}}" alt="">
                     </div>
                     <div class="single-slide">
                         <img src="image/products/product-details-2.jpg" alt="">
@@ -74,17 +74,22 @@
             <div class="col-lg-7">
                 <div class="product-details-info pl-lg--30 ">
                     <p class="tag-block">Tags: <a href="#">Movado</a>, <a href="#">Omega</a></p>
-                    <h3 class="product-title">Beats EP Wired On-Ear Headphone-Black</h3>
+                    <h3 class="product-title">{{$productDetail->name}}</h3>
                     <ul class="list-unstyled">
-                        <li>Ex Tax: <span class="list-value"> £60.24</span></li>
-                        <li>Brands: <a href="#" class="list-value font-weight-bold"> Canon</a></li>
-                        <li>Product Code: <span class="list-value"> model1</span></li>
-                        <li>Reward Points: <span class="list-value"> 200</span></li>
-                        <li>Availability: <span class="list-value"> In Stock</span></li>
+                        <li>Статус: <span class="list-value"> {{$productDetail->status}}</span></li>
+                        <li>Автор: <span class="list-value"> {{$productDetail->author}}</span></li>
+                        <li>Издательство: <span class="list-value"> {{$productDetail->publisher}}</span></li>
+                        <li>Год: <span class="list-value"> {{$productDetail->year}}</span></li>
+                        <li>Страниц: <span class="list-value"> {{$productDetail->pages}}</span></li>
+                        <li>ISBN: <span class="list-value"> {{$productDetail->isbn}}</span></li>
+                        <li>Вес: <span class="list-value"> {{$productDetail->weight}}</span></li>
+
+                        {{--<li>Reward Points: <span class="list-value"> 200</span></li>--}}
+
                     </ul>
                     <div class="price-block">
-                        <span class="price-new">£73.79</span>
-                        <del class="price-old">£91.86</del>
+                        <span class="price-new">{{$productDetail->price}}</span>
+                        <del class="price-old">{{$productDetail->price}}</del>
                     </div>
                     <div class="rating-widget">
                         <div class="rating-block">
@@ -101,9 +106,7 @@
                     </div>
                     <article class="product-details-article">
                         <h4 class="sr-only">Product Summery</h4>
-                        <p>Long printed dress with thin adjustable straps. V-neckline and wiring under the Dust
-                            with ruffles at the bottom of the
-                            dress.</p>
+                        <p>{{$productDetail->small_body}}</p>
                     </article>
                     <div class="add-to-cart-row">
                         <div class="count-input-block">
@@ -127,13 +130,13 @@
                 <li class="nav-item">
                     <a class="nav-link active" id="tab1" data-toggle="tab" href="#tab-1" role="tab"
                        aria-controls="tab-1" aria-selected="true">
-                        DESCRIPTION
+                        О книге
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="tab2" data-toggle="tab" href="#tab-2" role="tab"
                        aria-controls="tab-2" aria-selected="true">
-                        REVIEWS (1)
+                        Отзывы (1)
                     </a>
                 </li>
             </ul>
@@ -141,21 +144,7 @@
                 <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab1">
                     <article class="review-article">
                         <h1 class="sr-only">Tab Article</h1>
-                        <p>Fashion has been creating well-designed collections since 2010. The brand offers
-                            feminine designs delivering
-                            stylish
-                            separates and statement dresses which have since evolved into a full ready-to-wear
-                            collection in which every
-                            item is
-                            a
-                            vital part of a woman's wardrobe. The result? Cool, easy, chic looks with youthful
-                            elegance and unmistakable
-                            signature
-                            style. All the beautiful pieces are made in Italy and manufactured with the greatest
-                            attention. Now Fashion
-                            extends
-                            to
-                            a range of accessories including shoes, hats, belts and more!</p>
+                        <p>{{$productDetail->description}}</p>
                     </article>
                 </div>
                 <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab2">

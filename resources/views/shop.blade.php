@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-xl-4 col-md-4 col-sm-6  mt--10 mt-sm--0">
 									<span class="toolbar-status">
-										Showing 1 to 9 of 14 (2 Pages)
+										Showing 1 to {{$products->perPage()}} of {{$products->total()}} ({{$products->lastpage()}} Pages)
 									</span>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-6  mt--10 mt-md--0">
@@ -94,7 +94,7 @@
                         </div>
                         <div class="col-xl-5 col-md-4 col-sm-6  mt--10 mt-sm--0">
 									<span class="toolbar-status">
-										Showing 1 to 9 of 14 (2 Pages)
+										Showing 1 to 9 of 14 ({{$products->lastpage()}} Pages)
 									</span>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-6  mt--10 mt-md--0">
@@ -136,7 +136,6 @@
                     </div>
                 </div>
                 <div class="shop-product-wrap grid with-pagination row space-db--30 shop-border">
-                    @if(isset($products))
                     @foreach($products as $product)
                     <div class="col-lg-4 col-sm-6">
                         <div class="product-card">
@@ -145,13 +144,13 @@
                                     <a href="" class="author">
                                         {{$product->author}}
                                     </a>
-                                    <h3><a href="{{asset('/product-details')}}">{{$product->name}}</a></h3>
+                                    <h3><a href="{{asset('/product-details/'.$product->id)}}">{{$product->name}}</a></h3>
                                 </div>
                                 <div class="product-card--body">
                                     <div class="card-image">
                                         <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                         <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
+                                            <a href="{{asset('/product-details/'.$product->id)}}" class="hover-image">
                                                 <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                             </a>
                                             <div class="hover-btns">
@@ -220,7 +219,7 @@
                         </div>
                     </div>
                     @endforeach
-                    @endif{{--
+                    {{--
                     <div class="col-lg-4 col-sm-6">
                         <div class="product-card">
                             <div class="product-grid-content">
@@ -794,20 +793,7 @@
                 <div class="row pt--30">
                     <div class="col-md-12">
                         <div class="pagination-block">
-                            <ul class="pagination-btns flex-center">
-                                <li><a href="" class="single-btn prev-btn ">|<i
-                                            class="zmdi zmdi-chevron-left"></i> </a></li>
-                                <li><a href="" class="single-btn prev-btn "><i
-                                            class="zmdi zmdi-chevron-left"></i> </a></li>
-                                <li class="active"><a href="" class="single-btn">1</a></li>
-                                <li><a href="" class="single-btn">2</a></li>
-                                <li><a href="" class="single-btn">3</a></li>
-                                <li><a href="" class="single-btn">4</a></li>
-                                <li><a href="" class="single-btn next-btn"><i
-                                            class="zmdi zmdi-chevron-right"></i></a></li>
-                                <li><a href="" class="single-btn next-btn"><i
-                                            class="zmdi zmdi-chevron-right"></i>|</a></li>
-                            </ul>
+                            @include('pagination.default', ['paginator' => $products->appends(request()->input())])
                         </div>
                     </div>
                 </div>
