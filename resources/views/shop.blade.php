@@ -35,18 +35,39 @@
                         </div>
                         <div class="col-xl-4 col-md-4 col-sm-6  mt--10 mt-sm--0">
 									<span class="toolbar-status">
-										Showing 1 to {{$products->perPage()}} of {{$products->total()}} ({{$products->lastpage()}} Pages)
+										Showing {{$products->firstItem()}} to
+                                        @if($products->lastPage() == $products->currentPage())
+                                            {{($products->total() - $products->firstItem()) + $products->firstItem()}}
+                                        @else
+                                            {{($products->firstItem() + $products->perPage()) - 1}}
+                                        @endif
+                                            of {{$products->total()}} ({{$products->lastpage()}} Pages)
 									</span>
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-6  mt--10 mt-md--0">
                             <div class="sorting-selection">
                                 <span>Show:</span>
-                                <select class="form-control nice-select sort-select">
-                                    <option value="" selected="selected">3</option>
-                                    <option value="">9</option>
-                                    <option value="">5</option>
-                                    <option value="">10</option>
-                                    <option value="">12</option>
+                                @php
+                                    $optionsValuesArray = [3,5,9,10,12];
+                                @endphp
+                                <select id="recOnPageSelect" class="form-control nice-select sort-select">
+                                    @foreach($optionsValuesArray as $optionValue)
+                                        @php
+                                            $selectedValue = ''
+                                        @endphp
+                                        @if((isset($_COOKIE['rec_in_page'])) &&
+                                            ($_COOKIE['rec_in_page'] != null) &&
+                                            ($optionValue == $_COOKIE['rec_in_page']))
+                                            @php
+                                                $selectedValue = 'selected'
+                                            @endphp
+                                        {{--@elseif($optionValue == 9)
+                                            @php
+                                                $selectedValue = 'selected'
+                                            @endphp--}}
+                                        @endif
+                                            <option {{$selectedValue}}>{{$optionValue}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -100,7 +121,7 @@
                         <div class="col-lg-2 col-md-2 col-sm-6  mt--10 mt-md--0">
                             <div class="sorting-selection">
                                 <span>Show:</span>
-                                <select class="form-control nice-select sort-select">
+                                <select id="recOnPageSelect" class="form-control nice-select sort-select">
                                     <option value="" selected="selected">3</option>
                                     <option value="">9</option>
                                     <option value="">5</option>
@@ -141,7 +162,7 @@
                         <div class="product-card">
                             <div class="product-grid-content">
                                 <div class="product-header">
-                                    <a href="" class="author">
+                                    <a href="{{asset('/searchAuthor/'.$product->author)}}" class="author">
                                         {{$product->author}}
                                     </a>
                                     <h3><a href="{{asset('/product-details/'.$product->id)}}">{{$product->name}}</a></h3>
@@ -154,9 +175,15 @@
                                                 <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                             </a>
                                             <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
+                                                <a href="#html" data-id="{{$product->id}}"
+                                                                id="good-{{$product->id}}-{{$product->price}}"
+                                                                class="single-btn buy addCart"> <i class="fas fa-shopping-basket"></i> </a>
+                                                {{--<a href="#html" data-id="{{$product->id}}"
+                                                                id="good-{{$product->id}}-{{$product->price}}"
+                                                   class="btn btn-primary btn-sm buy addCart"> <i class="fas fa-shopping-basket"></i> </a>--}}
+                                                {{--<a href="{{asset('/cart')}}" class="single-btn">
                                                     <i class="fas fa-shopping-basket"></i>
-                                                </a>
+                                                </a>--}}
                                                 <a href="{{asset('/wishlist')}}" class="single-btn">
                                                     <i class="fas fa-heart"></i>
                                                 </a>
@@ -179,36 +206,37 @@
                             </div>
                             <div class="product-list-content">
                                 <div class="card-image">
-                                    <img src="{{asset('image/products/product-3.jpg')}}" alt="">
+                                    <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                 </div>
                                 <div class="product-card--body">
                                     <div class="product-header">
                                         <a href="" class="author">
-                                            Gpple
+                                            {{$product->author}}
                                         </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">Qpple cPad with Retina
-                                                Display MD510LL/A</a></h3>
+                                        <h3><a href="{{asset('/product-details/'.$product->id)}}" tabindex="0">{{$product->name}}</a></h3>
                                     </div>
                                     <article>
                                         <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
+                                        <p>{{$product->small_body}}</p>
                                     </article>
                                     <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
+                                        <span class="price">{{$product->price}}</span>
+                                        <del class="price-old">{{$product->price}}</del>
+                                        <span class="price-discount">0%</span>
                                     </div>
                                     <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
+                                        @for($i=1;$i<=5;$i++)
+                                            @if($i <= $product->rating)
+                                                <span class="fas fa-star star_on"></span>
+                                            @else
+                                                <span class="fas fa-star "></span>
+                                            @endif
+                                        @endfor
                                     </div>
                                     <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
+                                        <a href="#html" data-id="{{$product->id}}"
+                                           id="good-{{$product->id}}-{{$product->price}}"
+                                           class="btn btn-outlined buy addCart"> Add To Cart </a>
                                         <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
                                             Wishlist</a>
                                         <a href="" class="card-link"><i class="fas fa-random"></i> Add To

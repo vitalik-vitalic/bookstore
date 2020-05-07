@@ -120,8 +120,8 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="header-search-block">
-                            <input type="text" placeholder="Search entire store here">
-                            <button>Search</button>
+                            <input type="text" id="searchText" name="search-text" placeholder="Search entire store here">
+                            <button id="searchButtonMain" class="search-btn">Search</button>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -138,30 +138,69 @@
                                 <div class="cart-block">
                                     <div class="cart-total">
                                             <span class="text-number">
-                                                1
+                                                @php
+                                                $itemsInCart = 0;
+                                                //$totalSum = count($arr_obj);
+                                                $totalSum = 0;
+                                                $isMenuVisible = false;
+                                                foreach ($arr_obj as $one){
+                                                    if(isset($one) && ($one != null)){
+                                                         $itemsInCart = count($arr_obj);
+                                                         if(is_numeric($one->price)){
+                                                             $totalSum += $one->price;
+                                                         }
+                                                         $isMenuVisible = true;
+                                                    }
+                                                }
+                                                @endphp
+                                                {{$itemsInCart}}
                                             </span>
-                                        <span class="text-item">
-                                                Shopping Cart
-                                            </span>
+                                        <a href="{{asset('/cart')}}"><span class="text-item">
+                                            Shopping Cart
+                                            </span></a>
                                         <span class="price">
-                                                £0.00
+                                            {{$totalSum}}
                                                 <i class="fas fa-chevron-down"></i>
+
                                             </span>
                                     </div>
+                                    @if($isMenuVisible)
                                     <div class="cart-dropdown-block">
                                         <div class=" single-cart-block ">
-                                            <div class="cart-product">
-                                                <a href="{{asset('/product-details')}}" class="image">
-                                                    <img src="{{asset('image/products/cart-product-1.jpg')}}" alt="">
-                                                </a>
-                                                <div class="content">
-                                                    <h3 class="title"><a href="{{asset('/product-details')}}">Kodak PIXPRO
-                                                            Astro Zoom AZ421 16 MP</a>
-                                                    </h3>
-                                                    <p class="price"><span class="qty">1 ×</span> £87.34</p>
-                                                    <button class="cross-btn"><i class="fas fa-times"></i></button>
-                                                </div>
-                                            </div>
+                                            {{--@if(count($arr_obj) >= 2)
+                                                @for($i = 1; $i < 3;$i++)
+                                                    <div class="cart-product">
+                                                        <a href="{{asset('/product-details')}}" class="image">
+                                                            <img src="{{asset('image/products/'.$arr_obj[$i]->picture)}}" alt="">
+                                                        </a>
+                                                        <div class="content">
+                                                            <h3 class="title"><a href="{{asset('/product-details/'.$arr_obj[$i]->id)}}">{{$arr_obj[$i]->name}}</a>
+                                                            </h3>
+                                                            <p class="price"><span class="qty">1 ×</span> {{$arr_obj[$i]->price}}</p>
+                                                            <button class="cross-btn"><i class="fas fa-times"></i></button>
+                                                        </div>
+                                                    </div>
+                                                @endfor
+                                                    <a href="{{asset('/cart')}}" class="btn"> ... </a>
+                                            @else--}}
+                                                @foreach($arr_obj as $one)
+                                                    @if(isset($one) && ($one != null))
+                                                        <div class="cart-product">
+                                                            <a href="{{asset('/product-details')}}" class="image">
+                                                                <img src="{{asset('image/products/'.$one->picture)}}" alt="">
+                                                            </a>
+                                                            <div class="content">
+                                                                <h3 class="title"><a href="{{asset('/product-details/'.$one->id)}}">{{$one->name}}</a>
+                                                                </h3>
+                                                                <p class="price"><span class="qty">1 ×</span> {{$one->price}}</p>
+                                                                <a class="cross-btn" href="{{asset('/deleteItemFromCart/'.$one->id)}}"><i class="fas fa-times"></i></a>
+                                                                {{--<button class="cross-btn"><i class="fas fa-times"></i></button>--}}
+                                                            </div>
+                                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            {{--@endif--}}
+
                                         </div>
                                         <div class=" single-cart-block ">
                                             <div class="btn-block">
@@ -172,6 +211,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -250,10 +290,8 @@
             <div class="off-canvas-inner">
                 <!-- search box start -->
                 <div class="search-box offcanvas">
-                    <form>
-                        <input type="text" placeholder="Search Here">
-                        <button class="search-btn"><i class="ion-ios-search-strong"></i></button>
-                    </form>
+                    <input type="text" id="searchText2" name="search-text" placeholder="Search Here">
+                    <button id="searchButtonMain2" class="search-btn"><i class="ion-ios-search-strong"></i></button>
                 </div>
                 <!-- search box end -->
                 <!-- mobile menu start -->
@@ -470,6 +508,9 @@
 <!-- Use Minified Plugins Version For Fast Page Load -->
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/ajax-mail.js')}}"></script>
+<script src="{{asset('js/jquery.cookie.js')}}"></script>
+<script src="{{asset('js/bookstore.js')}}"></script>
+<script src="{{asset('js/cart.js')}}"></script>
 @stack('scripts')
 <script src="{{asset('js/custom.js')}}"></script>
 </body>

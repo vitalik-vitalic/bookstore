@@ -30,16 +30,16 @@
                         <img src="{{asset('image/products/'.$productDetail->picture)}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-2.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-2.jpg')}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-3.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-3.jpg')}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-4.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-4.jpg')}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-5.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-5.jpg')}}" alt="">
                     </div>
                 </div>
                 <!-- Product Details Slider Nav -->
@@ -55,19 +55,19 @@
               "focusOnSelect": true
               }'>
                     <div class="single-slide">
-                        <img src="image/products/product-details-1.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-1.jpg')}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-2.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-2.jpg')}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-3.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-3.jpg')}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-4.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-4.jpg')}}" alt="">
                     </div>
                     <div class="single-slide">
-                        <img src="image/products/product-details-5.jpg" alt="">
+                        <img src="{{asset('image/products/product-details-5.jpg')}}" alt="">
                     </div>
                 </div>
             </div>
@@ -93,11 +93,13 @@
                     </div>
                     <div class="rating-widget">
                         <div class="rating-block">
-                            <span class="fas fa-star star_on"></span>
-                            <span class="fas fa-star star_on"></span>
-                            <span class="fas fa-star star_on"></span>
-                            <span class="fas fa-star star_on"></span>
-                            <span class="fas fa-star "></span>
+                            @for($i=1;$i<=5;$i++)
+                                @if($i <= $productDetail->rating)
+                                    <span class="fas fa-star star_on"></span>
+                                @else
+                                    <span class="fas fa-star "></span>
+                                @endif
+                            @endfor
                         </div>
                         <div class="review-widget">
                             <a href="">(1 Reviews)</a> <span>|</span>
@@ -114,7 +116,7 @@
                             <input type="number" class="form-control text-center" value="1">
                         </div>
                         <div class="add-cart-btn">
-                            <a href="" class="btn btn-outlined--primary"><span class="plus-icon">+</span>Add to
+                            <a href="#html" data-id="{{$productDetail->id}}" id="good-{{$productDetail->id}}-{{$productDetail->price}}" class="btn btn-outlined--primary buy addCart"><span class="plus-icon">+</span>Add to
                                 Cart</a>
                         </div>
                     </div>
@@ -152,7 +154,7 @@
                         <h2 class="title-lg mb--20">1 REVIEW FOR AUCTOR GRAVIDA ENIM</h2>
                         <div class="review-comment mb--20">
                             <div class="avatar">
-                                <img src="image/icon/author-logo.png" alt="">
+                                <img src="{{asset('image/icon/author-logo.png')}}" alt="">
                             </div>
                             <div class="text">
                                 <div class="rating-block mb--15">
@@ -270,10 +272,10 @@ RELATED PRODUCTS BOOKS
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                <img src="image/products/product-10.jpg" alt="">
+                                <img src="{{asset('image/products/product-10.jpg')}}" alt="">
                                 <div class="hover-contents">
                                     <a href="product-details.html" class="hover-image">
-                                        <img src="image/products/product-1.jpg" alt="">
+                                        <img src="{{asset('image/products/product-1.jpg')}}" alt="">
                                     </a>
                                     <div class="hover-btns">
                                         <a href="cart.html" class="single-btn">
@@ -311,10 +313,10 @@ RELATED PRODUCTS BOOKS
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                <img src="image/products/product-2.jpg" alt="">
+                                <img src="{{asset('image/products/product-2.jpg')}}" alt="">
                                 <div class="hover-contents">
                                     <a href="product-details.html" class="hover-image">
-                                        <img src="image/products/product-1.jpg" alt="">
+                                        <img src="{{asset('image/products/product-1.jpg')}}" alt="">
                                     </a>
                                     <div class="hover-btns">
                                         <a href="cart.html" class="single-btn">
@@ -351,10 +353,10 @@ RELATED PRODUCTS BOOKS
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                <img src="image/products/product-3.jpg" alt="">
+                                <img src="{{asset('image/products/product-3.jpg')}}" alt="">
                                 <div class="hover-contents">
                                     <a href="product-details.html" class="hover-image">
-                                        <img src="image/products/product-2.jpg" alt="">
+                                        <img src="{{asset('image/products/product-2.jpg')}}" alt="">
                                     </a>
                                     <div class="hover-btns">
                                         <a href="cart.html" class="single-btn">
@@ -392,10 +394,10 @@ RELATED PRODUCTS BOOKS
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                <img src="image/products/product-5.jpg" alt="">
+                                <img src="{{asset('image/products/product-5.jpg')}}" alt="">
                                 <div class="hover-contents">
                                     <a href="product-details.html" class="hover-image">
-                                        <img src="image/products/product-4.jpg" alt="">
+                                        <img src="{{asset('image/products/product-4.jpg')}}" alt="">
                                     </a>
                                     <div class="hover-btns">
                                         <a href="cart.html" class="single-btn">
@@ -432,10 +434,10 @@ RELATED PRODUCTS BOOKS
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                <img src="image/products/product-6.jpg" alt="">
+                                <img src="{{asset('image/products/product-6.jpg')}}" alt="">
                                 <div class="hover-contents">
                                     <a href="product-details.html" class="hover-image">
-                                        <img src="image/products/product-4.jpg" alt="">
+                                        <img src="{{asset('image/products/product-4.jpg')}}" alt="">
                                     </a>
                                     <div class="hover-btns">
                                         <a href="cart.html" class="single-btn">
@@ -488,19 +490,19 @@ RELATED PRODUCTS BOOKS
               "asNavFor": ".product-slider-nav"
               }'>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-1.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-1.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-2.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-2.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-3.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-3.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-4.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-4.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-5.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-5.jpg')}}" alt="">
                                 </div>
                             </div>
                             <!-- Product Details Slider Nav -->
@@ -517,19 +519,19 @@ RELATED PRODUCTS BOOKS
               "focusOnSelect": true
               }'>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-1.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-1.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-2.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-2.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-3.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-3.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-4.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-4.jpg')}}" alt="">
                                 </div>
                                 <div class="single-slide">
-                                    <img src="image/products/product-details-5.jpg" alt="">
+                                    <img src="{{asset('image/products/product-details-5.jpg')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -550,11 +552,13 @@ RELATED PRODUCTS BOOKS
                                 </div>
                                 <div class="rating-widget">
                                     <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
+                                        @for($i=1;$i<=5;$i++)
+                                            @if($i <= $productDetail->rating)
+                                                <span class="fas fa-star star_on"></span>
+                                            @else
+                                                <span class="fas fa-star "></span>
+                                            @endif
+                                        @endfor
                                     </div>
                                     <div class="review-widget">
                                         <a href="">(1 Reviews)</a> <span>|</span>

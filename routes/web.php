@@ -27,10 +27,14 @@ Route::get('/', 'BaseController@getIndex')->name('home');
 Route::get('/home', 'BaseController@getIndex')->name('home');
 Route::get('/shop', 'ShopController@getIndex')->name('shop');
 Route::get('/shop/{id}', 'ShopProductsController@index');
+Route::get('/search', 'ShopController@searchIndex');
+Route::get('/searchAuthor/{authorFullName}', 'ShopController@searchAuthorIndex');
 
 Route::get('/product-details/{id}', 'ProductDetailsController@getIndex')->name('product-details');
 Route::get('/contact', 'ContactController@getIndex')->name('contact');
 Route::get('/cart', 'CartController@getIndex')->name('cart');
+Route::get('/deleteItemFromCart/{id}', 'CartController@getDelete');
+
 Route::get('/wishlist', 'WishlistController@getIndex')->name('wishlist');
 Route::get('/compare', 'CompareController@getIndex')->name('compare');
 Route::get('/login-register', 'LoginRegisterController@getIndex')->name('login-register');

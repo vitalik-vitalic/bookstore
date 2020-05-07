@@ -15,6 +15,25 @@
     </section>
     <!-- Cart Page Start -->
     <main class="cart-page-main-block inner-page-sec-padding-bottom">
+        {{--<div id="basket">
+            <table id="bascets">
+                <tbody>
+                <tr style="display: none;" class="hPb">
+                    <td>Выбрано:</td>
+                    <td><span id="totalGoods">0</span> товаров</td>
+                    <td>Сумма: &asymp; </td>
+                    <td><span id="totalPrice">0</span> руб.</td>
+                </tr>
+                <tr style="display: table-row;" class="hPe">
+                    <td colspan="2">Корзина пуста</td>
+                </tr>
+                <tr>
+                    <td><a style="display: none;" id="clearBasket" href="#">Очистить</a></td>
+                    <td><a style="display: none;" id="checkOut" href="{{asset('basket')}}">Оформить</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>--}}
         <div class="cart_area cart-area-padding  ">
             <div class="container">
                 <div class="page-section-title">
@@ -33,13 +52,34 @@
                                         <th class="pro-thumbnail">Image</th>
                                         <th class="pro-title">Product</th>
                                         <th class="pro-price">Price</th>
-                                        <th class="pro-quantity">Quantity</th>
+                                        {{--<th class="pro-quantity">Quantity</th>--}}
                                         <th class="pro-subtotal">Total</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <!-- Product Row -->
+                                    @foreach($arr_obj as $one)
+                                        @if(isset($one) && ($one != null))
                                     <tr>
+                                        <td class="pro-remove"><a href="{{asset('/deleteItemFromCart/'.$one->id)}}"><i class="far fa-trash-alt"></i></a>
+                                        </td>
+                                        <td class="pro-thumbnail"><a href="#"><img
+                                                    src="{{asset('image/products/'.$one->picture)}}" alt="Product"></a></td>
+                                        <td class="pro-title"><a href="#">{{$one->name}}</a></td>
+                                        <td class="pro-price"><span>{{$one->price}}</span></td>
+                                        {{--<td class="pro-quantity">
+                                            <div class="pro-qty">
+                                                <div class="count-input-block">
+                                                    <input type="number" class="form-control text-center"
+                                                           value="1">
+                                                </div>
+                                            </div>
+                                        </td>--}}
+                                        <td class="pro-subtotal"><span>{{$one->price}}</span></td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                    {{--<tr>
                                         <td class="pro-remove"><a href="#"><i class="far fa-trash-alt"></i></a>
                                         </td>
                                         <td class="pro-thumbnail"><a href="#"><img
@@ -73,9 +113,9 @@
                                             </div>
                                         </td>
                                         <td class="pro-subtotal"><span>$395.00</span></td>
-                                    </tr>
+                                    </tr>--}}
                                     <!-- Discount Row  -->
-                                    <tr>
+                                    {{--<tr>
                                         <td colspan="6" class="actions">
                                             <div class="coupon-block">
                                                 <div class="coupon-text">
@@ -96,7 +136,7 @@
                                                                                  name="_wp_http_referer" value="/petmark/cart/">
                                             </div>
                                         </td>
-                                    </tr>
+                                    </tr>--}}
                                     </tbody>
                                 </table>
                             </div>
@@ -332,13 +372,24 @@
                     <div class="col-lg-6 col-12 d-flex">
                         <div class="cart-summary">
                             <div class="cart-summary-wrap">
-                                <h4><span>Cart Summary</span></h4>
-                                <p>Sub Total <span class="text-primary">$1250.00</span></p>
-                                <p>Shipping Cost <span class="text-primary">$00.00</span></p>
-                                <h2>Grand Total <span class="text-primary">$1250.00</span></h2>
+                                @php
+                                    $totalSum = 0.0;
+                                    foreach ($arr_obj as $one){
+                                        if(isset($one) && ($one != null)){
+                                            if(is_numeric($one->price)){
+                                                $totalSum += $one->price;
+                                            }
+                                        }
+
+                                    }
+                                @endphp
+                                <h4><span>Итого: </span></h4>
+                                <p>Сумма <span class="text-primary">{{$totalSum}}</span></p>
+                                {{--<p>Shipping Cost <span class="text-primary">$00.00</span></p>--}}
+                                <h2>Итого: <span class="text-primary">{{$totalSum}}</span></h2>
                             </div>
                             <div class="cart-summary-button">
-                                <a href="checkout.html" class="checkout-btn c-btn btn--primary">Checkout</a>
+                                <a href="{{asset('/checkout')}}" class="checkout-btn c-btn btn--primary">Checkout</a>
                                 <button class="update-btn c-btn btn-outlined">Update Cart</button>
                             </div>
                         </div>
