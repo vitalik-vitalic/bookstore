@@ -16,18 +16,30 @@ class ShopComposer
         $tempArray2 = array();
 
         foreach ($categories as $category) {
-            if($category->parent_id == 0){
-                $tempArray = array();
-                $catalogItems = Catalog::where('parent_id',$category->id)->get();
 
-                foreach ($catalogItems as $item){
-                    array_push($tempArray,$item->id);
+            $isCatalogWithoutSubfolders = true;
+            foreach ($categories as $two){
+                if($category->id == $two->parent_id){
+                    $isCatalogWithoutSubfolders = false;
                 }
-
-                $productsTotal = Product::whereIn('catalog_id', $tempArray)->count();
-
-                array_push($tempArray2,array($category->name => $productsTotal));
             }
+
+                if($isCatalogWithoutSubfolders){
+                    $productsTotal = Product::where('catalog_id', $category->id)->count();
+                    array_push($tempArray2,array($category->name => $productsTotal));
+                }else{
+                    $tempArray = array();
+                    $catalogItems = Catalog::where('parent_id',$category->id)->get();
+
+                    foreach ($catalogItems as $item){
+                        array_push($tempArray,$item->id);
+                    }
+
+                    $productsTotal = Product::whereIn('catalog_id', $tempArray)->count();
+
+                    array_push($tempArray2,array($category->name => $productsTotal));
+
+                }
         }
 
         $view->with('categories', $categories)

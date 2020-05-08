@@ -12,6 +12,11 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('image/favicon.ico')}}">
 </head>
 <body>
+@if(Auth::user())
+    <div class="row">
+        @include('error')
+    </div>
+@endif
 <div class="site-wrapper" id="top">
     <div class="site-header d-none d-lg-block">
         <div class="header-middle pt--10 pb--10">

@@ -22,9 +22,18 @@ class ShopProductsController extends Controller
         }
 
         $catalogItem = Catalog::where('id',$id)->first();
+        $catalogAll = Catalog::all();
+
+        $isCatalogWithoutSubfolders = true;
+        foreach($catalogAll as $item){
+            if($catalogItem->id == $item->parent_id){
+                $isCatalogWithoutSubfolders = false;
+            }
+        }
+
         $tempArray = array();
 
-        if($catalogItem->parent_id !== 0){
+        if($isCatalogWithoutSubfolders){
             $products = Product::where('catalog_id',$id)->paginate($recInPage);
         }else{
             $catalogItems = Catalog::where('parent_id',$id)->get();
@@ -34,6 +43,7 @@ class ShopProductsController extends Controller
             }
 
             $products = Product::whereIn('catalog_id', $tempArray)->paginate($recInPage);
+            //dd($products);
         }
 
         return view('shop', compact('products'));

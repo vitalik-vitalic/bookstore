@@ -18,18 +18,21 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Checkout Form s-->
+                    <form id="checkoutForm" method="post" action="{{asset('/checkout/'.Auth::user()->id)}}">
+                        {{--Генерация токена--}}
+                        {!! csrf_field() !!}
                     <div class="checkout-form">
                         <div class="row row-40">
                             <div class="col-12">
                                 <h1 class="quick-title">Checkout</h1>
                                 <!-- Slide Down Trigger  -->
-                                <div class="checkout-quick-box">
+                                {{--<div class="checkout-quick-box">
                                     <p><i class="far fa-sticky-note"></i>Returning customer? <a href="javascript:"
                                                                                                 class="slide-trigger" data-target="#quick-login">Click
                                             here to login</a></p>
-                                </div>
+                                </div>--}}
                                 <!-- Slide Down Blox ==> Login Box  -->
-                                <div class="checkout-slidedown-box" id="quick-login">
+                                {{--<div class="checkout-slidedown-box" id="quick-login">
                                     <form action="./">
                                         <div class="quick-login-form">
                                             <p>If you have shopped with us before, please enter your details in the
@@ -59,9 +62,9 @@
                                             </div>
                                         </div>
                                     </form>
-                                </div>
+                                </div>--}}
                                 <!-- Slide Down Trigger  -->
-                                <div class="checkout-quick-box">
+                                {{--<div class="checkout-quick-box">
                                     <p><i class="far fa-sticky-note"></i>Have a coupon? <a href="javascript:"
                                                                                            class="slide-trigger" data-target="#quick-cupon">
                                             Click here to enter your code</a></p>
@@ -74,7 +77,7 @@
                                             <a href="" class="btn btn-outlined">Apply coupon</a>
                                         </div>
                                     </form>
-                                </div>
+                                </div>--}}
                             </div>
                             <div class="col-lg-7 mb--20">
                                 <!-- Billing Address -->
@@ -83,52 +86,98 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>First Name*</label>
-                                            <input type="text" placeholder="First Name">
+                                            @if(isset($billingAddress->first_name) && ($billingAddress->first_name != null))
+                                                <input type="text" name="first_name" placeholder="First Name" value="{{$billingAddress->first_name}}">
+                                            @else
+                                                <input type="text" name="first_name" placeholder="First Name" required>
+                                            @endif
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Last Name*</label>
-                                            <input type="text" placeholder="Last Name">
+                                            @if(isset($billingAddress->last_name) && ($billingAddress->last_name != null))
+                                                <input type="text" name="last_name" placeholder="Last Name" value="{{$billingAddress->last_name}}">
+                                            @else
+                                                <input type="text" name="last_name" placeholder="Last Name" required>
+                                            @endif
                                         </div>
                                         <div class="col-12 mb--20">
                                             <label>Company Name</label>
-                                            <input type="text" placeholder="Company Name">
+                                            @if(isset($billingAddress->company_name) && ($billingAddress->company_name != null))
+                                                <input type="text" name="company_name" placeholder="Company Name" value="{{$billingAddress->company_name}}">
+                                            @else
+                                                <input type="text" name="company_name" placeholder="Company Name">
+                                            @endif
                                         </div>
                                         <div class="col-12 col-12 mb--20">
                                             <label>Country*</label>
-                                            <select class="nice-select">
-                                                <option>Bangladesh</option>
-                                                <option>China</option>
-                                                <option>country</option>
-                                                <option>India</option>
-                                                <option>Japan</option>
+                                            <select name="country" class="nice-select" value="asda">
+                                                @php
+                                                    $selected = '';
+                                                @endphp
+                                                @foreach($listOfAllCountries as $countrie)
+                                                    @php
+                                                        if(isset($billingAddress->country) &&
+                                                            ($billingAddress->country != null) &&
+                                                            ($billingAddress->country == $countrie->country_name)){
+                                                            $selected = 'selected';
+                                                        }else{
+                                                            $selected = '';
+                                                        }
+                                                    @endphp
+                                                    <option {{$selected}}>{{$countrie->country_name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Email Address*</label>
-                                            <input type="email" placeholder="Email Address">
+                                            @if(isset($billingAddress->email_address) && ($billingAddress->email_address != null))
+                                                <input name="email_address" type="email" placeholder="Email Address" value="{{$billingAddress->email_address}}" required>
+                                            @else
+                                                <input name="email_address" type="email" placeholder="Email Address" required>
+                                            @endif
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Phone no*</label>
-                                            <input type="text" placeholder="Phone number">
+                                            @if(isset($billingAddress->phone_no) && ($billingAddress->phone_no != null))
+                                                <input name="phone_no" type="text" placeholder="Phone number" value="{{$billingAddress->phone_no}}" required>
+                                            @else
+                                                <input name="phone_no" type="text" placeholder="Phone number" required>
+                                            @endif
                                         </div>
                                         <div class="col-12 mb--20">
                                             <label>Address*</label>
-                                            <input type="text" placeholder="Address line 1">
-                                            <input type="text" placeholder="Address line 2">
+                                            @if(isset($billingAddress->address1) && ($billingAddress->address1 != null))
+                                                <input name="address1" type="text" placeholder="Address line 1" value="{{$billingAddress->address1}}" required>
+                                            @else
+                                                <input name="address1" type="text" placeholder="Address line 1" required>
+                                            @endif
+                                            @if(isset($billingAddress->address2) && ($billingAddress->address2 != null))
+                                                <input name="address2" type="text" placeholder="Address line 2" value="{{$billingAddress->address2}}" required>
+                                            @else
+                                                <input name="address2" type="text" placeholder="Address line 2" required>
+                                            @endif
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Town/City*</label>
-                                            <input type="text" placeholder="Town/City">
+                                            @if(isset($billingAddress->city) && ($billingAddress->city != null))
+                                                <input name="city" type="text" placeholder="Town/City" value="{{$billingAddress->city}}" required>
+                                            @else
+                                                <input name="city" type="text" placeholder="Town/City" required>
+                                            @endif
                                         </div>
-                                        <div class="col-md-6 col-12 mb--20">
+                                        {{--<div class="col-md-6 col-12 mb--20">
                                             <label>State*</label>
                                             <input type="text" placeholder="State">
-                                        </div>
+                                        </div>--}}
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Zip Code*</label>
-                                            <input type="text" placeholder="Zip Code">
+                                            @if(isset($billingAddress->zip_code) && ($billingAddress->zip_code != null))
+                                                <input name="zip_code" type="text" placeholder="Zip Code" value="{{$billingAddress->zip_code}}" required>
+                                            @else
+                                                <input name="zip_code" type="text" placeholder="Zip Code" required>
+                                            @endif
                                         </div>
-                                        <div class="col-12 mb--20 ">
+                                        {{--<div class="col-12 mb--20 ">
                                             <div class="block-border check-bx-wrapper">
                                                 <div class="check-box">
                                                     <input type="checkbox" id="create_account">
@@ -139,7 +188,7 @@
                                                     <label for="shiping_address">Ship to Different Address</label>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>--}}
                                     </div>
                                 </div>
                                 <!-- Shipping Address -->
@@ -173,12 +222,10 @@
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
                                             <label>Country*</label>
-                                            <select class="nice-select">
-                                                <option>Bangladesh</option>
-                                                <option>China</option>
-                                                <option>country</option>
-                                                <option>India</option>
-                                                <option>Japan</option>
+                                            <select size="10" class="nice-select">
+                                                @foreach($listOfAllCountries as $countrie)
+                                                    <option>{{$countrie->country_name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                         <div class="col-md-6 col-12 mb--20">
@@ -197,7 +244,7 @@
                                 </div>
                                 <div class="order-note-block mt--30">
                                     <label for="order-note">Order notes</label>
-                                    <textarea id="order-note" cols="30" rows="10" class="order-note"
+                                    <textarea name="order_notes" id="order-note" cols="30" rows="10" class="order-note"
                                               placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                                 </div>
                             </div>
@@ -208,20 +255,32 @@
                                         <div class="checkout-cart-total">
                                             <h2 class="checkout-title">YOUR ORDER</h2>
                                             <h4>Product <span>Total</span></h4>
+                                            @php
+                                                $totalSum = 0.0;
+                                            @endphp
                                             <ul>
-                                                <li><span class="left">Cillum dolore tortor nisl X 01</span> <span
-                                                        class="right">$25.00</span></li>
-                                                <li><span class="left">Auctor gravida pellentesque X 02 </span><span
+                                                @foreach($arr_obj as $one)
+                                                    @if(isset($one) && ($one != null))
+                                                        @php
+                                                            if(is_numeric($one->price)){
+                                                                $totalSum += $one->price;
+                                                            }
+                                                        @endphp
+                                                <li><span class="left" data-id="{{$one->id}}">{{$one->name}}</span> <span
+                                                        class="right">{{$one->price}}</span></li>
+                                                {{--<li><span class="left">Auctor gravida pellentesque X 02 </span><span
                                                         class="right">$50.00</span></li>
                                                 <li><span class="left">Condimentum posuere consectetur X 01</span>
                                                     <span class="right">$29.00</span></li>
                                                 <li><span class="left">Habitasse dictumst elementum X 01</span>
-                                                    <span class="right">$10.00</span></li>
+                                                    <span class="right">$10.00</span></li>--}}
+                                                    @endif
+                                                @endforeach
                                             </ul>
-                                            <p>Sub Total <span>$104.00</span></p>
-                                            <p>Shipping Fee <span>$00.00</span></p>
-                                            <h4>Grand Total <span>$104.00</span></h4>
-                                            <div class="method-notice mt--25">
+                                            {{--<p>Sub Total <span></span></p>--}}
+                                            {{--<p>Shipping Fee <span></span></p>--}}
+                                            <h4>Grand Total <span>{{$totalSum}}</span></h4>
+                                            {{--<div class="method-notice mt--25">
                                                 <article>
                                                     <h3 class="d-none sr-only">blog-article</h3>
                                                     Sorry, it seems that there are no available payment methods for
@@ -230,19 +289,21 @@
                                                     assistance
                                                     or wish to make alternate arrangements.
                                                 </article>
-                                            </div>
-                                            <div class="term-block">
+                                            </div>--}}
+                                            {{--<div class="term-block">
                                                 <input type="checkbox" id="accept_terms2">
                                                 <label for="accept_terms2">I’ve read and accept the terms &
                                                     conditions</label>
-                                            </div>
-                                            <button class="place-order w-100">Place order</button>
+                                            </div>--}}
+                                            <button type="submit" class="place-order w-100">Place order</button>
+                                            {{--<button class="place-order w-100">Place order</button>--}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

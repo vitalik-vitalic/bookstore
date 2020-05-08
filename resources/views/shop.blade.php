@@ -979,7 +979,7 @@
                                 @if($one->parent_id == 0)
                                     @foreach($productsTotal as $item)
                                         @foreach($item as $key => $value)
-                                        @if(($one->name === $key) && ($value !== 0))
+                                        @if(($one->name == $key) && ($value !== 0))
                                             @php
                                                 $totalProducts = $value;
                                             @endphp

@@ -17,4 +17,14 @@ class Product extends Model
         return $this->belongsTo('App\Catalog','catalog_id');
 
     }
+
+    protected static function booted()
+    {
+        static::created(function ($product) {
+            //
+        });
+    }
+
+
+
 }

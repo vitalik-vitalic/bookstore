@@ -78,7 +78,7 @@ jQuery(document).ready(function($) {
             });
         }
         /**********************
-         *Expand Category Mobile Menu 
+         *Expand Category Mobile Menu
          ***********************/
 
         function categoryMenuExpandInMobile() {
@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
             $(".search-dismiss,body").on('click', function(e) {
                 $(".search-wrapper").removeClass('open')
             })
-            // $("body").on('click', function () { 
+            // $("body").on('click', function () {
             // 	$(".search-wrapper").removeClass('open')
             // })
             $(".search-box,.search-trigger").on('click', function(e) {
@@ -358,8 +358,8 @@ jQuery(document).ready(function($) {
         /*-------------------------------------
         	--> NIce Select
         ---------------------------------------*/
-        $('.nice-select').niceSelect()
-        
+        $('.nice-select').niceSelect('update')
+
 
         /*-------------------------------------
         	--> Product Sorting

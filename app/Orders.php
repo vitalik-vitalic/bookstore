@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Orders extends Model
 {
     //
+    protected $fillable = ['user_id', 'body', 'status', 'order_notes'];
 
 }
