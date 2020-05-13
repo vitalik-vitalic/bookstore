@@ -73,7 +73,7 @@ function addCart(p1, p2, p3) {
     if (!check) {
         basket += msg.id + ':' + msg.count + ':' + msg.price + ',';
     } else {
-        alert("Óæå åñòü â êîðçèíå! Êîëè÷åñòâî òîâàðîâ ìîæíî áóäåò èçìåíèòü ïðè îôîðìëåíèè çàêàçà");
+        alert("Данная позиция уже находится в корзине!");
     }
     if (!check) {
         basketArray = basket.split(",");// Íàõîäèì âñå òîâàðû

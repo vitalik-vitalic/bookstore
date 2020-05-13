@@ -9,6 +9,12 @@ use function foo\func;
 
 class ShopProductsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //
     public function index($id = null)
     {
@@ -32,9 +38,48 @@ class ShopProductsController extends Controller
         }
 
         $tempArray = array();
+        $orderByNameValue = '';
+        $orderByDirectionValue = '';
+
+        if(isset($_COOKIE['sortSelect'])){
+            switch ($_COOKIE['sortSelect']){
+                case "A-Z":
+                    $orderByNameValue = 'name';
+                    $orderByDirectionValue = 'asc';
+                    break;
+                case "Z-A":
+                    $orderByNameValue = 'name';
+                    $orderByDirectionValue = 'desc';
+                    break;
+                case "Low->High":
+                    $orderByNameValue = 'price';
+                    $orderByDirectionValue = 'asc';
+                    break;
+                case "High->Low":
+                    $orderByNameValue = 'price';
+                    $orderByDirectionValue = 'desc';
+                    break;
+                case "HighestRating":
+                    $orderByNameValue = 'rating';
+                    $orderByDirectionValue = 'desc';
+                    break;
+                case "LowestRating":
+                    $orderByNameValue = 'rating';
+                    $orderByDirectionValue = 'asc';
+                    break;
+                default:
+                    $orderByNameValue = 'name';
+                    $orderByDirectionValue = 'asc';
+            }
+
+        }else{
+            $orderByNameValue = 'name';
+            $orderByDirectionValue = 'asc';
+        }
+
 
         if($isCatalogWithoutSubfolders){
-            $products = Product::where('catalog_id',$id)->paginate($recInPage);
+            $products = Product::where('catalog_id',$id)->orderBy($orderByNameValue, $orderByDirectionValue)->paginate($recInPage);
         }else{
             $catalogItems = Catalog::where('parent_id',$id)->get();
 
@@ -42,8 +87,7 @@ class ShopProductsController extends Controller
                 array_push($tempArray,$item->id);
             }
 
-            $products = Product::whereIn('catalog_id', $tempArray)->paginate($recInPage);
-            //dd($products);
+            $products = Product::whereIn('catalog_id', $tempArray)->orderBy($orderByNameValue, $orderByDirectionValue)->paginate($recInPage);
         }
 
         return view('shop', compact('products'));

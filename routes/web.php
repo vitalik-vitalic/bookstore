@@ -29,9 +29,12 @@ Route::get('/shop', 'ShopController@getIndex')->name('shop');
 Route::get('/shop/{id}', 'ShopProductsController@index');
 Route::get('/search', 'ShopController@searchIndex');
 Route::get('/searchAuthor/{authorFullName}', 'ShopController@searchAuthorIndex');
+Route::get('/searchPublisher/{publisherName}', 'ShopController@searchPublisherIndex');
 
 Route::get('/product-details/{id}', 'ProductDetailsController@getIndex')->name('product-details');
 Route::get('/contact', 'ContactController@getIndex')->name('contact');
+Route::post('/contact', 'ContactController@postIndex');
+
 Route::get('/cart', 'CartController@getIndex')->name('cart');
 Route::get('/deleteItemFromCart/{id}', 'CartController@getDelete');
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\OrderRequest;
-use App\Product;
 use Illuminate\Http\Request;
 use App\appsCountries;
 use App\Orders;
@@ -25,15 +24,12 @@ class CheckoutController extends Controller
     //
     public function getIndex(){
 
-        $arr_obj = $this->cook_arr();
-        //dd($arr_obj);
-        $val = $this->cook_value();
-        //dd($val);
+        $arr_obj = \App::make('App\Libs\Cook')->cook_arr();
+        $val = \App::make('App\Libs\Cook')->cook_value();
         $name = (isset(Auth::user()->name)) ? Auth::user()->name : '';
         $email = (isset(Auth::user()->email)) ? Auth::user()->email : '';
 
         $billingAddress = BillingAddress::where('user_id',Auth::user()->id)->get()->first();
-        //dd($billingAddress);
         $listOfAllCountries = appsCountries::all();
 
         return view('checkout', compact('listOfAllCountries','arr_obj', 'name', 'email', 'billingAddress'));
@@ -66,36 +62,4 @@ class CheckoutController extends Controller
             return redirect()->back()->withInput()->withErrors($e->getMessage());
         }
     }
-
-    public function cook_value()
-    {
-        $cook = (isset($_COOKIE['basket'])) ? $_COOKIE['basket'] : 0;
-        //dd($cook);
-        if($cook !=0){
-            $big_arr = explode(',', $cook);
-            $val = array();
-            foreach ($big_arr as $value_arr) {
-                $arr = explode(':', $value_arr);
-                if ($arr[0] != null) {
-                    $val[$arr[0]] = $arr[1];
-                }
-            }
-            return $val;
-        }
-    }
-
-    public function cook_arr()
-    {
-        $cook = (isset($_COOKIE['basket'])) ? $_COOKIE['basket'] : 0;
-        $big_arr = explode(',', $cook);
-        $tov = array();
-        foreach ($big_arr as $value_arr) {
-            $arr = explode(':', $value_arr);
-            if ($arr[0] != null) {
-                $tov[$arr[0]] = Product::find($arr[0]);
-            }
-        }
-        return $tov;
-    }
-
 }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Orders;
+use Auth;
+use App\BillingAddress;
 
 class MyAccountController extends Controller
 {
@@ -18,6 +21,11 @@ class MyAccountController extends Controller
 
     //
     public function getIndex(){
-        return view('my-account');
+
+
+        $allUserOrders = Orders::where('user_id', Auth::user()->id)->get();
+        $billingAddress = BillingAddress::where('user_id', Auth::user()->id)->get();
+        //dd($billingAddress);
+        return view('my-account', compact('allUserOrders', 'billingAddress'));
     }
 }

@@ -77,7 +77,43 @@
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
+                                            @php
+                                                $counter = 0;
+                                            @endphp
+                                            @foreach($allUserOrders as $order)
+                                                @php
+                                                    $counter +=1;
+                                                @endphp
+                                                <tr>
+                                                    <td>{{$counter}}</td>
+                                                    <td>{{$billingAddress[0]->first_name.' '.$billingAddress[0]->last_name}}</td>
+                                                    <td>{{$order->created_at}}</td>
+                                                    <td>{{$order->status}}</td>
+                                                    <td>@php
+                                                        $productsIds = array();
+                                                        $totalPrice = 0;
+                                                        $tempArray = explode( ',', $order->body );
+                                                        foreach($tempArray as $item){
+                                                            $tempArray2 = explode( ':', $item );
+                                                            $counter2 = 0;
+                                                            foreach ($tempArray2 as $item) {
+                                                                $counter2 += 1;
+                                                                if($counter2 == 3){
+                                                                    $totalPrice +=  $item;
+                                                                }
+
+                                                                if(($counter2 == 1) && isset($item) && ($item != null)){
+                                                                    array_push($productsIds,$item);
+                                                                }
+                                                            }
+                                                        }
+                                                        $productsIdsToString = implode(",", $productsIds);
+                                                    @endphp
+                                                    {{$totalPrice}}</td>
+                                                    <td><a href="cart.html" class="btn" data-href="{{$productsIdsToString}}">View</a></td>
+                                                </tr>
+                                            @endforeach
+                                            {{--<tr>
                                                 <td>1</td>
                                                 <td>Mostarizing Oil</td>
                                                 <td>Aug 22, 2018</td>
@@ -100,7 +136,8 @@
                                                 <td>On Hold</td>
                                                 <td>$99</td>
                                                 <td><a href="cart.html" class="btn">View</a></td>
-                                            </tr>
+                                            </tr>--}}
+                                            {{--{{$allUserOrders->links()}}--}}
                                             </tbody>
                                         </table>
                                     </div>
@@ -154,9 +191,10 @@
                                     <h3>Billing Address</h3>
                                     <address>
                                         <p><strong>{{Auth::user()->name}}</strong></p>
-                                        <p>1355 Market St, Suite 900 <br>
-                                            San Francisco, CA 94103</p>
-                                        <p>Mobile: (123) 456-7890</p>
+                                        <p>{{$billingAddress[0]->address1}}, <br>
+                                            {{$billingAddress[0]->zip_code}}, <br>
+                                            {{$billingAddress[0]->city}}</p>
+                                        <p>Mobile: {{$billingAddress[0]->phone_no}}</p>
                                     </address>
                                     <a href="#" class="btn btn--primary"><i class="fa fa-edit"></i>Edit
                                         Address</a>

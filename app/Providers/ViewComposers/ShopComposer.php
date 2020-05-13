@@ -42,7 +42,27 @@ class ShopComposer
                 }
         }
 
-        $view->with('categories', $categories)
-            ->with('productsTotal', $tempArray2);
+        $publisher = Product::select('publisher')->distinct()->orderBy('publisher', 'asc')->get();
+        $productsAll = Product::all();
+        $tempArray3 = array();
+
+        foreach ($publisher as $itemOne) {
+
+            $counter = 0;
+            foreach ($productsAll as $itemTwo) {
+
+                if($itemOne->publisher == $itemTwo->publisher){
+                    $counter += 1;
+                }
+            }
+            array_push($tempArray3,array($itemOne->publisher => $counter));
+        }
+
+        //dd($tempArray3);
+
+         $view->with('categories', $categories)
+              ->with('publisher', $publisher)
+              ->with('productsTotal', $tempArray2)
+              ->with('publishersTotal', $tempArray3);
     }
 }

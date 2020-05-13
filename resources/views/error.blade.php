@@ -1,9 +1,9 @@
-<script>
+{{--<script>
     $(document).ready(function(){
         $('#fade').fadeToggle(5000);
     });
     $('.alert').alert()
-</script>
+</script>--}}
 
 @if (isset($errors) && count($errors) > 0)
     <div class="alert alert-warning alert-dismissible fade show" style="text-align: center" role="alert">

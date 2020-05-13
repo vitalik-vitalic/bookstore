@@ -26,4 +26,11 @@ $(document).ready(function () {
         window.location.replace(redirectUrl);
     });
 
+    $('#sortSelect').change(function () {
+        var sortSelectValue = $(this).find(":selected").val();
+        console.dir(sortSelectValue);
+        $.cookie('sortSelect',sortSelectValue, { path: '/'});
+        document.location.reload(true);
+    });
+
 });

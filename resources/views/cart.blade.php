@@ -63,7 +63,7 @@
                                     <tr>
                                         <td class="pro-remove"><a href="{{asset('/deleteItemFromCart/'.$one->id)}}"><i class="far fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="pro-thumbnail"><a href="#"><img
+                                        <td class="pro-thumbnail"><a href="{{asset('/product-details/'.$one->id)}}"><img
                                                     src="{{asset('image/products/'.$one->picture)}}" alt="Product"></a></td>
                                         <td class="pro-title"><a href="#">{{$one->name}}</a></td>
                                         <td class="pro-price"><span>{{$one->price}}</span></td>

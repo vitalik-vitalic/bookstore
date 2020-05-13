@@ -22,26 +22,12 @@ class BaseComposer
         /*Extras items*/
         $extras = Extras::orderBy('id')->get();
 
-        $arr_obj = $this->cook_arr();
-        //dd($arr_obj);
+        $arr_obj = \App::make('App\Libs\Cook')->cook_arr();
+
         $view->with('result', $categories)
              ->with('menus', $menus)
              ->with('information', $information)
              ->with('extras', $extras)
              ->with('arr_obj', $arr_obj);
-    }
-
-    public function cook_arr()
-    {
-        $cook = (isset($_COOKIE['basket'])) ? $_COOKIE['basket'] : 0;
-        $big_arr = explode(',', $cook);
-        $tov = array();
-        foreach ($big_arr as $value_arr) {
-            $arr = explode(':', $value_arr);
-            if ($arr[0] != null) {
-                $tov[$arr[0]] = Product::find($arr[0]);
-            }
-        }
-        return $tov;
     }
 }

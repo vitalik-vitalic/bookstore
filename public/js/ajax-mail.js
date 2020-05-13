@@ -14,6 +14,13 @@ $(function() {
         // Serialize the form data.
         var formData = $(form).serialize();
 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST'
+        });
+
         // Submit the form using AJAX.
         $.ajax({
                 type: 'POST',
@@ -26,22 +33,31 @@ $(function() {
                 $(formMessages).addClass('success');
 
                 // Set the message text.
-                $(formMessages).text(response);
+                //$(formMessages).text(response);
+                $(formMessages).text('Thank you for your feedback!');
+
+                console.dir(response);
 
                 // Clear the form.
                 $('#contact-form input,#contact-form textarea').val('');
             })
             .fail(function(data) {
                 // Make sure that the formMessages div has the 'error' class.
+
                 $(formMessages).removeClass('success');
                 $(formMessages).addClass('error');
 
+                $(formMessages).text('Oops! An error occured and your message could not be sent.');
+
+                console.dir('Oops! An error occured and your message could not be sent.');
+                //console.dir(response);
+
                 // Set the message text.
-                if (data.responseText !== '') {
+                /*if (data.responseText !== '') {
                     $(formMessages).text(data.responseText);
                 } else {
                     $(formMessages).text('Oops! An error occured and your message could not be sent.');
-                }
+                }*/
             });
     });
 

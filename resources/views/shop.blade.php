@@ -74,24 +74,24 @@
                         <div class="col-lg-4 col-md-4 col-sm-6 mt--10 mt-md--0 ">
                             <div class="sorting-selection">
                                 <span>Sort By:</span>
-                                <select class="form-control nice-select sort-select mr-0">
-                                    <option value="" selected="selected">Default Sorting</option>
-                                    <option value="">Sort
+                                <select id="sortSelect" class="form-control nice-select sort-select mr-0">
+                                    <option value="defaultSorting" >Default Sorting</option>
+                                    <option value="A-Z">Sort
                                         By:Name (A - Z)</option>
-                                    <option value="">Sort
+                                    <option value="Z-A">Sort
                                         By:Name (Z - A)</option>
-                                    <option value="">Sort
+                                    <option value="Low->High">Sort
                                         By:Price (Low &gt; High)</option>
-                                    <option value="">Sort
+                                    <option value="High->Low">Sort
                                         By:Price (High &gt; Low)</option>
-                                    <option value="">Sort
+                                    <option value="HighestRating">Sort
                                         By:Rating (Highest)</option>
-                                    <option value="">Sort
+                                    <option value="LowestRating">Sort
                                         By:Rating (Lowest)</option>
-                                    <option value="">Sort
+                                    {{--<option value="">Sort
                                         By:Model (A - Z)</option>
                                     <option value="">Sort
-                                        By:Model (Z - A)</option>
+                                        By:Model (Z - A)</option>--}}
                                 </select>
                             </div>
                         </div>
@@ -178,12 +178,6 @@
                                                 <a href="#html" data-id="{{$product->id}}"
                                                                 id="good-{{$product->id}}-{{$product->price}}"
                                                                 class="single-btn buy addCart"> <i class="fas fa-shopping-basket"></i> </a>
-                                                {{--<a href="#html" data-id="{{$product->id}}"
-                                                                id="good-{{$product->id}}-{{$product->price}}"
-                                                   class="btn btn-primary btn-sm buy addCart"> <i class="fas fa-shopping-basket"></i> </a>--}}
-                                                {{--<a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>--}}
                                                 <a href="{{asset('/wishlist')}}" class="single-btn">
                                                     <i class="fas fa-heart"></i>
                                                 </a>
@@ -247,575 +241,6 @@
                         </div>
                     </div>
                     @endforeach
-                    {{--
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="product-card">
-                            <div class="product-grid-content">
-                                <div class="product-header">
-                                    <a href="" class="author">
-                                        Lpple
-                                    </a>
-                                    <h3><a href="{{asset('/product-details')}}">Simple Things You To Save BOOK</a></h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="image/products/product-4.jpg" alt="">
-                                        <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-5.jpg" alt="">
-                                            </a>
-                                            <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>
-                                                <a href="{{asset('/wishlist')}}" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="{{asset('/compare')}}" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-content">
-                                <div class="card-image">
-                                    <img src="image/products/product-6.jpg" alt="">
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="product-header">
-                                        <a href="" class="author">
-                                            Bpple
-                                        </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">What You Can Learn From
-                                                Bill Gates</a></h3>
-                                    </div>
-                                    <article>
-                                        <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
-                                    </article>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                    <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
-                                    </div>
-                                    <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
-                                        <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
-                                            Wishlist</a>
-                                        <a href="" class="card-link"><i class="fas fa-random"></i> Add To
-                                            Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="product-card">
-                            <div class="product-grid-content">
-                                <div class="product-header">
-                                    <a href="" class="author">
-                                        Cpple
-                                    </a>
-                                    <h3><a href="{{asset('/product-details')}}">3 Ways Create Better BOOK With</a></h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="image/products/product-7.jpg" alt="">
-                                        <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-8.jpg" alt="">
-                                            </a>
-                                            <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>
-                                                <a href="{{asset('/wishlist')}}" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="{{asset('/compare')}}" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-content">
-                                <div class="card-image">
-                                    <img src="image/products/product-7.jpg" alt="">
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="product-header">
-                                        <a href="" class="author">
-                                            Happle
-                                        </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">What You Can Learn From
-                                                Bill Gates</a></h3>
-                                    </div>
-                                    <article>
-                                        <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
-                                    </article>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                    <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
-                                    </div>
-                                    <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
-                                        <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
-                                            Wishlist</a>
-                                        <a href="" class="card-link"><i class="fas fa-random"></i> Add To
-                                            Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="product-card">
-                            <div class="product-grid-content">
-                                <div class="product-header">
-                                    <a href="" class="author">
-                                        Rpple
-                                    </a>
-                                    <h3><a href="{{asset('/product-details')}}">Simple Things You To Save BOOK</a></h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="image/products/product-8.jpg" alt="">
-                                        <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-7.jpg" alt="">
-                                            </a>
-                                            <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>
-                                                <a href="{{asset('/wishlist')}}" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="{{asset('/compare')}}" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-content">
-                                <div class="card-image">
-                                    <img src="image/products/product-8.jpg" alt="">
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="product-header">
-                                        <a href="" class="author">
-                                            Epple
-                                        </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">Never Changing BOOK Will
-                                                Eventually Destroy You</a></h3>
-                                    </div>
-                                    <article>
-                                        <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
-                                    </article>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                    <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
-                                    </div>
-                                    <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
-                                        <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
-                                            Wishlist</a>
-                                        <a href="" class="card-link"><i class="fas fa-random"></i> Add To
-                                            Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="product-card">
-                            <div class="product-grid-content">
-                                <div class="product-header">
-                                    <a href="" class="author">
-                                        Gpple
-                                    </a>
-                                    <h3><a href="{{asset('/product-details')}}">How Deal With Very Bad BOOK</a></h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="image/products/product-9.jpg" alt="">
-                                        <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-10.jpg" alt="">
-                                            </a>
-                                            <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>
-                                                <a href="{{asset('/wishlist')}}" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="{{asset('/compare')}}" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-content">
-                                <div class="card-image">
-                                    <img src="image/products/product-9.jpg" alt="">
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="product-header">
-                                        <a href="" class="author">
-                                            Tapple
-                                        </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">OMG! The Best BOOK
-                                                Ever!</a></h3>
-                                    </div>
-                                    <article>
-                                        <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
-                                    </article>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                    <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
-                                    </div>
-                                    <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
-                                        <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
-                                            Wishlist</a>
-                                        <a href="" class="card-link"><i class="fas fa-random"></i> Add To
-                                            Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="product-card">
-                            <div class="product-grid-content">
-                                <div class="product-header">
-                                    <a href="" class="author">
-                                        Rtpple
-                                    </a>
-                                    <h3><a href="{{asset('/product-details')}}">The Hidden Mystery Behind</a></h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="image/products/product-10.jpg" alt="">
-                                        <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-9.jpg" alt="">
-                                            </a>
-                                            <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>
-                                                <a href="{{asset('/wishlist')}}" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="{{asset('/compare')}}" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-content">
-                                <div class="card-image">
-                                    <img src="image/products/product-10.jpg" alt="">
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="product-header">
-                                        <a href="" class="author">
-                                            Ypple
-                                        </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">BOOK: Do You Really Need
-                                                It? This Will Help Y</a></h3>
-                                    </div>
-                                    <article>
-                                        <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
-                                    </article>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                    <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
-                                    </div>
-                                    <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
-                                        <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
-                                            Wishlist</a>
-                                        <a href="" class="card-link"><i class="fas fa-random"></i> Add To
-                                            Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="product-card">
-                            <div class="product-grid-content">
-                                <div class="product-header">
-                                    <a href="" class="author">
-                                        Upple
-                                    </a>
-                                    <h3><a href="{{asset('/product-details')}}">Little Known Ways To Rid Yourself</a>
-                                    </h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="image/products/product-11.jpg" alt="">
-                                        <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-12.jpg" alt="">
-                                            </a>
-                                            <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>
-                                                <a href="{{asset('/wishlist')}}" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="{{asset('/compare')}}" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-content">
-                                <div class="card-image">
-                                    <img src="image/products/product-11.jpg" alt="">
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="product-header">
-                                        <a href="" class="author">
-                                            Apple
-                                        </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">Revolutionize Your BOOK
-                                                With These Easy-peasy Tips</a></h3>
-                                    </div>
-                                    <article>
-                                        <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
-                                    </article>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                    <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
-                                    </div>
-                                    <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
-                                        <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
-                                            Wishlist</a>
-                                        <a href="" class="card-link"><i class="fas fa-random"></i> Add To
-                                            Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="product-card">
-                            <div class="product-grid-content">
-                                <div class="product-header">
-                                    <a href="" class="author">
-                                        Bpple
-                                    </a>
-                                    <h3><a href="{{asset('/product-details')}}">Qple GPad with Retina Sisplay</a></h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="image/products/product-2.jpg" alt="">
-                                        <div class="hover-contents">
-                                            <a href="{{asset('/product-details')}}" class="hover-image">
-                                                <img src="image/products/product-1.jpg" alt="">
-                                            </a>
-                                            <div class="hover-btns">
-                                                <a href="{{asset('/cart')}}" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
-                                                </a>
-                                                <a href="{{asset('/wishlist')}}" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="{{asset('/compare')}}" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-list-content">
-                                <div class="card-image">
-                                    <img src="image/products/product-2.jpg" alt="">
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="product-header">
-                                        <a href="" class="author">
-                                            Zpple
-                                        </a>
-                                        <h3><a href="{{asset('/product-details')}}" tabindex="0">Here Is A Quick Cure For
-                                                Book</a></h3>
-                                    </div>
-                                    <article>
-                                        <h2 class="sr-only">Card List Article</h2>
-                                        <p>More room to move. With 80GB or 160GB of storage and up to 40 hours
-                                            of battery life, the new iPod classic lets you enjoy
-                                            up to 40,000 songs or..</p>
-                                    </article>
-                                    <div class="price-block">
-                                        <span class="price">£51.20</span>
-                                        <del class="price-old">£51.20</del>
-                                        <span class="price-discount">20%</span>
-                                    </div>
-                                    <div class="rating-block">
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star star_on"></span>
-                                        <span class="fas fa-star "></span>
-                                    </div>
-                                    <div class="btn-block">
-                                        <a href="" class="btn btn-outlined">Add To Cart</a>
-                                        <a href="" class="card-link"><i class="fas fa-heart"></i> Add To
-                                            Wishlist</a>
-                                        <a href="" class="card-link"><i class="fas fa-random"></i> Add To
-                                            Cart</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>--}}
                 </div>
                 <!-- Pagination Block -->
                 <div class="row pt--30">
@@ -989,26 +414,6 @@
                                     <li><a href="{{asset('/shop/'.$one->id)}}">{{$one->name}} ({{$totalProducts}})</a></li>
                                 @endif
                             @endforeach
-                            {{--<li><a href="">Accessories (5)</a></li>
-                            <li><a href="">Arts & Photography (10)</a></li>
-                            <li><a href="">Biographies (16)</a></li>
-                            <li><a href="">Business & Money (0)</a></li>
-                            <li><a href="">Calendars (6)</a></li>
-                            <li><a href="">Children's Books (9)</a></li>
-                            <li><a href="">Comics (16)</a></li>
-                            <li><a href="">Cookbooks (7)</a></li>
-                            <li><a href="">Education (3)</a></li>
-                            <li><a href="">House Plants (6)</a></li>
-                            <li><a href="">Indoor Living (9)</a></li>
-                            <li><a href="">Perfomance Filters (5)</a></li>
-                            <li><a href="">Shop (16)</a>
-                                <ul class="inner-cat-items">
-                                    <li><a href="">Saws (0)</a></li>
-                                    <li><a href="">Concrete Tools (7)</a></li>
-                                    <li><a href="">Drills (2)</a></li>
-                                    <li><a href="">Sanders (1)</a></li>
-                                </ul>
-                            </li>--}}
                         </ul>
                     </div>
                     <!-- Price -->
@@ -1025,18 +430,16 @@
                     </div>
                     <!-- Size -->
                     <div class="single-block">
-                        <h3 class="sidebar-title">Manufacturer</h3>
+                        <h3 class="sidebar-title">Publisher</h3>
                         <ul class="sidebar-menu--shop menu-type-2">
-                            <li><a href="">Christian Dior <span>(5)</span></a></li>
-                            <li><a href="">Diesel <span>(8)</span></a></li>
-                            <li><a href="">Ferragamo <span>(11)</span></a></li>
-                            <li><a href="">Hermes <span>(14)</span></a></li>
-                            <li><a href="">Louis Vuitton <span>(12)</span></a></li>
-                            <li><a href="">Tommy Hilfiger <span>(0)</span></a></li>
-                            <li><a href="">Versace <span>(0)</span></a></li>
+                            @foreach($publishersTotal as $key => $value)
+                                @foreach($value as $m => $n)
+                                    <li><a href="{{asset('/searchPublisher/'.$m)}}">{{$m}} <span>({{$n}})</span></a></li>
+                                @endforeach
+                            @endforeach
                         </ul>
                     </div>
-                    <!-- Color -->
+                    {{--<!-- Color -->
                     <div class="single-block">
                         <h3 class="sidebar-title">Select By Color</h3>
                         <ul class="sidebar-menu--shop menu-type-2">
@@ -1049,7 +452,7 @@
                             <li><a href="">White <span>(8)</span></a></li>
                             <li><a href="">Yellow <span>(11)</span> </a></li>
                         </ul>
-                    </div>
+                    </div>--}}
                     <!-- Promotion Block -->
                     <div class="single-block">
                         <a href="" class="promo-image sidebar">

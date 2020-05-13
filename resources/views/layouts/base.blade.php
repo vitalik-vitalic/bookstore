@@ -191,7 +191,7 @@
                                                 @foreach($arr_obj as $one)
                                                     @if(isset($one) && ($one != null))
                                                         <div class="cart-product">
-                                                            <a href="{{asset('/product-details')}}" class="image">
+                                                            <a href="{{asset('/product-details/'.$one->id)}}" class="image">
                                                                 <img src="{{asset('image/products/'.$one->picture)}}" alt="">
                                                             </a>
                                                             <div class="content">
