@@ -8,6 +8,7 @@ use App\appsCountries;
 use App\Orders;
 use App\BillingAddress;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class CheckoutController extends Controller
 {
@@ -25,6 +26,8 @@ class CheckoutController extends Controller
     public function getIndex(){
 
         $arr_obj = \App::make('App\Libs\Cook')->cook_arr();
+        $arr_obj = \App::make('App\Libs\DealOfTheDayCheck')->DealOfTheDayCheck($arr_obj);
+
         $val = \App::make('App\Libs\Cook')->cook_value();
         $name = (isset(Auth::user()->name)) ? Auth::user()->name : '';
         $email = (isset(Auth::user()->email)) ? Auth::user()->email : '';

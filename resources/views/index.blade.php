@@ -16,17 +16,15 @@
                 <div class="container">
                     <div class="home-content text-center text-sm-left position-relative">
                         <div class="hero-partial-image image-right">
-                            <img src="image/bg-images/home-slider-2-ai.png" alt="">
+                            <img src="{{asset('image/products/'.$latestProducts[0]->picture)}}" alt="">
                         </div>
                         <div class="row no-gutters ">
                             <div class="col-xl-6 col-md-6 col-sm-7">
                                 <div class="home-content-inner content-left-side">
-                                    <h1>H.G. Wells<br>
-                                        De Vengeance</h1>
-                                    <h2>Cover Up Front Of Books and Leave Summary</h2>
-                                    <a href="shop-grid.html" class="btn btn-outlined--primary">
-                                        $78.09 - Order Now!
-                                    </a>
+                                    <h1>{{$latestProducts[0]->author}}</h1>
+                                    <h2>{{$latestProducts[0]->name}}</h2>
+                                    <a href="#html" data-id="{{$latestProducts[0]->id}}" id="good-{{$latestProducts[0]->id}}-{{$latestProducts[0]->price}}" class="btn btn-outlined--primary buy addCart">
+                                        {{$latestProducts[0]->price}} - Order Now!</a>
                                 </div>
                             </div>
                         </div>
@@ -37,17 +35,14 @@
                 <div class="container">
                     <div class="home-content text-center text-sm-left position-relative">
                         <div class="hero-partial-image image-left">
-                            <img src="image/bg-images/home-slider-1-ai.png" alt="">
+                            <img src="{{asset('image/products/'.$latestProducts[1]->picture)}}" alt="">
                         </div>
                         <div class="row align-items-center justify-content-start justify-content-md-end">
                             <div class="col-lg-6 col-xl-7 col-md-6 col-sm-7">
                                 <div class="home-content-inner content-right-side">
-                                    <h1>J.D. Kurtness <br>
-                                        De Vengeance</h1>
-                                    <h2>Cover Up Front Of Books and Leave Summary</h2>
-                                    <a href="shop-grid.html" class="btn btn-outlined--primary">
-                                        $78.09 - Learn More
-                                    </a>
+                                    <h1>{{$latestProducts[1]->author}}</h1>
+                                    <h2>{{$latestProducts[1]->name}}</h2>
+                                    <a href="{{asset('/product-details/'.$latestProducts[1]->id)}}">{{$latestProducts[1]->price}} - Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -139,14 +134,14 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="shop-tab" data-toggle="tab" href="#shop" role="tab"
-                           aria-controls="shop" aria-selected="true">
+                           aria-controls="shop" aria-selected="false">
                             Featured Products
                         </a>
                         <span class="arrow-icon"></span>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="men-tab" data-toggle="tab" href="#men" role="tab"
-                           aria-controls="men" aria-selected="true">
+                           aria-controls="men" aria-selected="false">
                             New Arrivals
                         </a>
                         <span class="arrow-icon"></span>
@@ -160,7 +155,7 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane show active" id="shop" role="tabpanel" aria-labelledby="shop-tab">
+                    <div class="tab-pane active" id="shop" role="tabpanel" aria-labelledby="shop-tab">
                         <div class="product-slider multiple-row  slider-border-multiple-row  sb-slick-slider"
                              data-slick-setting='{
                             "autoplay": true,
@@ -174,7 +169,52 @@
                             {"breakpoint":480, "settings": {"slidesToShow": 1} },
                             {"breakpoint":320, "settings": {"slidesToShow": 1} }
                         ]'>
-                            <div class="single-slide">
+                            @foreach($booksComputerLiterature as $booksComputerLiterature)
+                                <div class="single-slide">
+                                    <div class="product-card">
+                                        <div class="product-header">
+                                            <a href="" class="author">
+                                                {{$booksComputerLiterature->author}}
+                                            </a>
+                                            <h3><a href="{{asset('/product-details/'.$booksComputerLiterature->id)}}">
+                                                    {{$booksComputerLiterature->name}}
+                                                </a></h3>
+                                        </div>
+                                        <div class="product-card--body">
+                                            <div class="card-image">
+                                                <img src="{{asset('image/products/'.$booksComputerLiterature->picture)}}" alt="newArrivals">
+                                                <div class="hover-contents">
+                                                    <a href="{{asset('/product-details/'.$booksComputerLiterature->id)}}" class="hover-image">
+                                                        <img src="{{asset('image/products/'.$booksComputerLiterature->picture)}}" alt="newArrivals2">
+                                                    </a>
+                                                    <div class="hover-btns">
+                                                        <a href="#html" data-id="{{$booksComputerLiterature->id}}"
+                                                           id="good-{{$booksComputerLiterature->id}}-{{$booksComputerLiterature->price}}"
+                                                           class="single-btn buy addCart"> <i class="fas fa-shopping-basket"></i> </a>
+                                                        <a href="{{asset('/wishlist')}}" class="single-btn">
+                                                            <i class="fas fa-heart"></i>
+                                                        </a>
+                                                        <a href="{{asset('/compare')}}" class="single-btn">
+                                                            <i class="fas fa-random"></i>
+                                                        </a>
+                                                        <button data-id="{{$booksComputerLiterature->id}}" class="quickModalBtn single-btn"><i class="fas fa-eye"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="price-block">
+                                                <span class="price-new">{{$booksComputerLiterature->price}}</span>
+                                                @if(isset($booksComputerLiterature->oldPrice))
+                                                    <del class="price-old">{{$booksComputerLiterature->oldPrice}}</del>
+                                                @endif
+                                                @if(isset($booksComputerLiterature->discount) && ($booksComputerLiterature->finaldate > date("Y-m-d H:i:s")))
+                                                    <span  class="price-discount">{{$booksComputerLiterature->discount}}%</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                            {{--<div class="single-slide">
                                 <div class="product-card">
                                     <div class="product-header">
                                         <a href="" class="author">
@@ -665,10 +705,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
-                    <div class="tab-pane" id="men" role="tabpanel" aria-labelledby="men-tab">
+                    <div class="tab-pane " id="men" role="tabpanel" aria-labelledby="men-tab">
                         <div class="product-slider multiple-row  slider-border-multiple-row  sb-slick-slider"
                              data-slick-setting='{
                                         "autoplay": true,
@@ -682,48 +722,52 @@
                                         {"breakpoint":480, "settings": {"slidesToShow": 1} },
                                         {"breakpoint":320, "settings": {"slidesToShow": 1} }
                                     ]'>
+                            @foreach($newArrivals as $oneNewArrivalsBook)
                             <div class="single-slide">
                                 <div class="product-card">
                                     <div class="product-header">
                                         <a href="" class="author">
-                                            jpple
+                                            {{$oneNewArrivalsBook->author}}
                                         </a>
-                                        <h3><a href="{{asset('/product-details')}}">Bpple iPad with Retina Display
-                                                MD510LL/A</a></h3>
+                                        <h3><a href="{{asset('/product-details/'.$oneNewArrivalsBook->id)}}">
+                                                {{$oneNewArrivalsBook->name}}
+                                            </a></h3>
                                     </div>
                                     <div class="product-card--body">
                                         <div class="card-image">
-                                            <img src="image/products/product-3.jpg" alt="">
+                                            <img src="{{asset('image/products/'.$oneNewArrivalsBook->picture)}}" alt="newArrivals">
                                             <div class="hover-contents">
-                                                <a href="{{asset('/product-details')}}" class="hover-image">
-                                                    <img src="image/products/product-1.jpg" alt="">
+                                                <a href="{{asset('/product-details/'.$oneNewArrivalsBook->id)}}" class="hover-image">
+                                                    <img src="{{asset('image/products/'.$oneNewArrivalsBook->picture)}}" alt="newArrivals2">
                                                 </a>
                                                 <div class="hover-btns">
-                                                    <a href="{{asset('/cart')}}" class="single-btn">
-                                                        <i class="fas fa-shopping-basket"></i>
-                                                    </a>
+                                                    <a href="#html" data-id="{{$oneNewArrivalsBook->id}}"
+                                                       id="good-{{$oneNewArrivalsBook->id}}-{{$oneNewArrivalsBook->price}}"
+                                                       class="single-btn buy addCart"> <i class="fas fa-shopping-basket"></i> </a>
                                                     <a href="{{asset('/wishlist')}}" class="single-btn">
                                                         <i class="fas fa-heart"></i>
                                                     </a>
                                                     <a href="{{asset('/compare')}}" class="single-btn">
                                                         <i class="fas fa-random"></i>
                                                     </a>
-                                                    <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                       class="single-btn">
-                                                        <i class="fas fa-eye"></i>
-                                                    </a>
+                                                    <button data-id="{{$oneNewArrivalsBook->id}}" class="quickModalBtn single-btn"><i class="fas fa-eye"></i></button>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="price-block">
-                                            <span class="price">£51.20</span>
-                                            <del class="price-old">£51.20</del>
-                                            <span class="price-discount">20%</span>
+                                            <span class="price-new">{{$oneNewArrivalsBook->price}}</span>
+                                            @if(isset($oneNewArrivalsBook->oldPrice))
+                                                <del class="price-old">{{$oneNewArrivalsBook->oldPrice}}</del>
+                                            @endif
+                                            @if(isset($oneNewArrivalsBook->discount) && ($oneNewArrivalsBook->finaldate > date("Y-m-d H:i:s")))
+                                                <span  class="price-discount">{{$oneNewArrivalsBook->discount}}%</span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-slide">
+                            @endforeach
+                            {{--<div class="single-slide">
                                 <div class="product-card">
                                     <div class="product-header">
                                         <a href="" class="author">
@@ -1173,7 +1217,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                     <div class="tab-pane" id="woman" role="tabpanel" aria-labelledby="woman-tab">
@@ -1709,52 +1753,116 @@
                 {"breakpoint":575, "settings": {"slidesToShow": 2} },
                 {"breakpoint":490, "settings": {"slidesToShow": 1} }
             ]'>
-                <div class="single-slide">
+                @foreach($dealOfTheDayProducts as $product)
+                    <div class="single-slide">
+                        @php
+                            $priceWithDiscount = round(($product->price / (1 + ($product->discount / 100))), 2);
+                        @endphp
+                        <div class="product-card">
+                            <div class="product-header">
+                                <a href="#" class="author">
+                                    {{$product->author}}
+                                </a>
+                                <h3><a href="{{asset('/product-details/'.$product->product_id)}}">{{$product->name}}</a></h3>
+                            </div>
+                            <div class="product-card--body">
+                                <div class="card-image">
+                                    <img src="{{asset('image/products/'.$product->picture)}}" alt="">
+                                    <div class="hover-contents">
+                                        <a href="{{asset('/product-details/'.$product->product_id)}}" class="hover-image">
+                                            <img src="{{asset('image/products/'.$product->picture)}}" alt="">
+                                        </a>
+                                        <div class="hover-btns">
+                                            {{--<a href="#html" data-id="{{$product->product_id}}"
+                                               id="good-{{$product->product_id}}-{{$product->price}}"
+                                               class="single-btn buy addCart"> <i class="fas fa-shopping-basket"></i>
+                                            </a>--}}
+                                            <a id="good-{{$product->product_id}}-{{$priceWithDiscount}}"
+                                               class="single-btn buy addCart">
+                                                <i class="fas fa-shopping-basket"></i>
+                                            </a>
+                                            <a href="{{asset('/wishlist')}}" class="single-btn">
+                                                <i class="fas fa-heart"></i>
+                                            </a>
+                                            <a href="{{asset('/compare')}}" class="single-btn">
+                                                <i class="fas fa-random"></i>
+                                            </a>
+                                            <button data-id="{{$product->id}}" class="quickModalBtn single-btn"><i class="fas fa-eye"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="price-block">
+                                    <span class="price">{{$priceWithDiscount}}</span>
+                                    <del class="price-old">{{$product->price}}</del>
+                                    <span class="price-discount">{{$product->discount}}%</span>
+                                </div>
+                                <div class="count-down-block">
+                                    @php
+                                        $date = date_create($product->finaldate);
+                                        $finaDate = date_format($date,"m/d/Y");
+                                    @endphp
+                                    <div class="product-countdown" data-countdown="{{$finaDate}}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{--@php
+                        $priceWithDiscount = round(($product->price / (1 + ($product->discount / 100))), 2);
+                    @endphp--}}
+                {{--<div class="single-slide">
                     <div class="product-card">
                         <div class="product-header">
                             <a href="" class="author">
-                                Ypple
+                                {{$product->author}}
                             </a>
-                            <h3><a href="{{asset('/product-details')}}">Do You Really Need It? This Will Help You
+                            <h3><a href="{{asset('/product-details')}}">{{$product->name}}
                                 </a>
                             </h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                <img src="image/products/product-2.jpg" alt="">
+                                <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                 <div class="hover-contents">
-                                    <a href="{{asset('/product-details')}}" class="hover-image">
-                                        <img src="image/products/product-1.jpg" alt="">
+                                    <a href="{{asset('/product-details/'.$product->id)}}" class="hover-image">
+                                        <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                     </a>
-                                    <div class="hover-btns">
-                                        <a href="{{asset('/cart')}}" class="single-btn">
-                                            <i class="fas fa-shopping-basket"></i>
+                                    <div class="hover-contents">
+                                        <a href="{{asset('/product-details/'.$product->id)}}" class="hover-image">
+                                            <img src="{{asset('image/products/'.$product->picture)}}" alt="">
                                         </a>
-                                        <a href="{{asset('/wishlist')}}" class="single-btn">
-                                            <i class="fas fa-heart"></i>
-                                        </a>
-                                        <a href="{{asset('/compare')}}" class="single-btn">
-                                            <i class="fas fa-random"></i>
-                                        </a>
-                                        <a href="#" data-toggle="modal" data-target="#quickModal"
-                                           class="single-btn">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                    </div>
+                                        <div class="hover-btns">
+                                            <a href="{{asset('/cart')}}" class="single-btn">
+                                                <i class="fas fa-shopping-basket"></i>
+                                            </a>
+                                            <a href="{{asset('/wishlist')}}" class="single-btn">
+                                                <i class="fas fa-heart"></i>
+                                            </a>
+                                            <a href="{{asset('/compare')}}" class="single-btn">
+                                                <i class="fas fa-random"></i>
+                                            </a>
+                                            <a href="#" data-toggle="modal" data-target="#quickModal"
+                                               class="single-btn">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                        </div>
                                 </div>
                             </div>
                             <div class="price-block">
-                                <span class="price">£51.20</span>
-                                <del class="price-old">£51.20</del>
-                                <span class="price-discount">20%</span>
+                                <span class="price">{{$product->price}}</span>
+                                <del class="price-old">{{$product->price}}</del>
+                                <span class="price-discount">{{$product->discount}}%</span>
                             </div>
                             <div class="count-down-block">
-                                <div class="product-countdown" data-countdown="01/05/2020"></div>
+                                @php
+                                    $date = new DateTime($product->finaldate);
+                                @endphp
+                                <div class="product-countdown" data-countdown="{{$date->format('m/d/Y')}}"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="single-slide">
+                </div>--}}
+                @endforeach
+                {{--<div class="single-slide">
                     <div class="product-card">
                         <div class="product-header">
                             <a href="#" class="author">
@@ -1792,7 +1900,7 @@
                                 <span class="price-discount">20%</span>
                             </div>
                             <div class="count-down-block">
-                                <div class="product-countdown" data-countdown="01/05/2020"></div>
+                                <div class="product-countdown" data-countdown="01/10/2020"></div>
                             </div>
                         </div>
                     </div>
@@ -1835,7 +1943,7 @@
                                 <span class="price-discount">20%</span>
                             </div>
                             <div class="count-down-block">
-                                <div class="product-countdown" data-countdown="01/05/2020"></div>
+                                <div class="product-countdown" data-countdown="01/10/2020"></div>
                             </div>
                         </div>
                     </div>
@@ -1879,7 +1987,7 @@
                                 <span class="price-discount">20%</span>
                             </div>
                             <div class="count-down-block">
-                                <div class="product-countdown" data-countdown="01/05/2020"></div>
+                                <div class="product-countdown" data-countdown="01/10/2020"></div>
                             </div>
                         </div>
                     </div>
@@ -1922,7 +2030,7 @@
                                 <span class="price-discount">20%</span>
                             </div>
                             <div class="count-down-block">
-                                <div class="product-countdown" data-countdown="01/05/2020"></div>
+                                <div class="product-countdown" data-countdown="10/01/2020"></div>
                             </div>
                         </div>
                     </div>
@@ -2014,7 +2122,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </section>
@@ -2049,29 +2157,35 @@
                                     {"breakpoint":575, "settings": {"slidesToShow": 1} },
                                     {"breakpoint":490, "settings": {"slidesToShow": 1} }
                                 ]'>
-                            <div class="single-slide">
-                                <div class="product-card card-style-list">
-                                    <div class="card-image">
-                                        <img src="image/products/product-6.jpg" alt="">
-                                    </div>
-                                    <div class="product-card--body">
-                                        <div class="product-header">
-                                            <a href="#" class="author">
-                                                Rpple
-                                            </a>
-                                            <h3><a href="{{asset('/product-details')}}">Do You Really Need It? This
-                                                    Will Help You
-                                                </a></h3>
+                            @foreach($bestSailingProductsOutput as $bestSailingBook)
+                                <div class="single-slide">
+                                    <div class="product-card card-style-list">
+                                        <div class="card-image">
+                                            <img src="{{asset('image/products/'.$bestSailingBook->picture)}}" alt="bestSailingBook">
                                         </div>
-                                        <div class="price-block">
-                                            <span class="price">£51.20</span>
-                                            <del class="price-old">£51.20</del>
-                                            <span class="price-discount">20%</span>
+                                        <div class="product-card--body">
+                                            <div class="product-header">
+                                                <a href="#" class="author">
+                                                    {{$bestSailingBook->author}}
+                                                </a>
+                                                <h3><a href="{{asset('/product-details/'.$bestSailingBook->id)}}">
+                                                        {{$bestSailingBook->name}}
+                                                    </a></h3>
+                                            </div>
+                                            <div class="price-block">
+                                                <span class="price-new">{{$bestSailingBook->price}}</span>
+                                                @if(isset($bestSailingBook->oldPrice))
+                                                    <del class="price-old">{{$bestSailingBook->oldPrice}}</del>
+                                                @endif
+                                                @if(isset($bestSailingBook->discount) && ($bestSailingBook->finaldate > date("Y-m-d H:i:s")))
+                                                    <span  class="price-discount">{{$bestSailingBook->discount}}%</span>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="single-slide">
+                            @endforeach
+                            {{--<div class="single-slide">
                                 <div class="product-card card-style-list">
                                     <div class="card-image">
                                         <img src="image/products/product-1.jpg" alt="">
@@ -2187,7 +2301,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -2216,27 +2330,33 @@
                                             {"breakpoint":575, "settings": {"slidesToShow": 1} },
                                             {"breakpoint":490, "settings": {"slidesToShow": 1} }
                                         ]'>
-                <div class="single-slide">
+                @foreach($booksForChildrens as $oneBook)
+                    <div class="single-slide">
                     <div class="product-card card-style-list">
                         <div class="card-image">
-                            <img src="image/products/product-2.jpg" alt="">
+                            <img src="{{asset('image/products/'.$oneBook->picture)}}" alt="childrenBook">
                         </div>
                         <div class="product-card--body">
                             <div class="product-header">
                                 <a href="#" class="author">
-                                    Rpple
+                                    {{$oneBook->author}}
                                 </a>
-                                <h3><a href="{{asset('/product-details')}}">Revolutionize Your BOOK With</a></h3>
+                                <h3><a href="{{asset('/product-details/'.$oneBook->id)}}">{{$oneBook->name}}</a></h3>
                             </div>
                             <div class="price-block">
-                                <span class="price">£51.20</span>
-                                <del class="price-old">£51.20</del>
-                                <span class="price-discount">20%</span>
+                                <span class="price-new">{{$oneBook->price}}</span>
+                                @if(isset($oneBook->oldPrice))
+                                    <del class="price-old">{{$oneBook->oldPrice}}</del>
+                                @endif
+                                @if(isset($oneBook->discount) && ($oneBook->finaldate > date("Y-m-d H:i:s")))
+                                    <span  class="price-discount">{{$oneBook->discount}}%</span>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="single-slide">
+                @endforeach
+                {{--<div class="single-slide">
                     <div class="product-card card-style-list">
                         <div class="card-image">
                             <img src="image/products/product-1.jpg" alt="">
@@ -2338,7 +2458,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </section>
@@ -2402,48 +2522,57 @@
                 {"breakpoint":480, "settings": {"slidesToShow": 1} },
                 {"breakpoint":320, "settings": {"slidesToShow": 1} }
             ]'>
-                <div class="single-slide">
+                @foreach($booksArtAndCulture as $oneBookArtAndCulture)
+                    <div class="single-slide">
                     <div class="product-card">
                         <div class="product-header">
                             <a href="#" class="author">
-                                Lpple
+                                {{$oneBookArtAndCulture->author}}
                             </a>
-                            <h3><a href="{{asset('/product-details')}}">Revolutionize Your BOOK With These Easy
+                            <h3><a href="{{asset('/product-details/'.$oneBookArtAndCulture->id)}}">
+                                    {{$oneBookArtAndCulture->name}}
                                 </a></h3>
                         </div>
                         <div class="product-card--body">
                             <div class="card-image">
-                                <img src="image/products/product-2.jpg" alt="">
+                                <img src="{{asset('image/products/'.$oneBookArtAndCulture->picture)}}" alt="artAndCulture">
                                 <div class="hover-contents">
-                                    <a href="{{asset('/product-details')}}" class="hover-image">
-                                        <img src="image/products/product-1.jpg" alt="">
+                                    <a href="{{asset('/product-details/'.$oneBookArtAndCulture->id)}}" class="hover-image">
+                                        <img src="{{asset('image/products/'.$oneBookArtAndCulture->picture)}}" alt="artAndCulture">
                                     </a>
                                     <div class="hover-btns">
-                                        <a href="{{asset('/cart')}}" class="single-btn">
-                                            <i class="fas fa-shopping-basket"></i>
-                                        </a>
+                                        <a href="#html" data-id="{{$oneBookArtAndCulture->id}}"
+                                           id="good-{{$oneBookArtAndCulture->id}}-{{$oneBookArtAndCulture->price}}"
+                                           class="single-btn buy addCart"> <i class="fas fa-shopping-basket"></i> </a>
                                         <a href="{{asset('/wishlist')}}" class="single-btn">
                                             <i class="fas fa-heart"></i>
                                         </a>
                                         <a href="{{asset('/compare')}}" class="single-btn">
                                             <i class="fas fa-random"></i>
                                         </a>
-                                        <a href="#" data-toggle="modal" data-target="#quickModal"
-                                           class="single-btn">
+                                        {{--<input type="button" data-id="{{$product->id}}" class="quickModalBtn" value="Modal2">--}}
+                                        <button data-id="{{$oneBookArtAndCulture->id}}" class="quickModalBtn single-btn"><i class="fas fa-eye"></i></button>
+                                        {{--<a href="#" data-id="{{$product->id}}" --}}{{--data-toggle="modal" data-target="#quickModal"--}}{{--
+                                           class="quickModalBtn single-btn">
                                             <i class="fas fa-eye"></i>
-                                        </a>
+                                        </a>--}}
                                     </div>
                                 </div>
                             </div>
                             <div class="price-block">
-                                <span class="price">£51.20</span>
-                                <del class="price-old">£51.20</del>
-                                <span class="price-discount">20%</span>
+                                <span class="price-new">{{$oneBookArtAndCulture->price}}</span>
+                                @if(isset($oneBookArtAndCulture->oldPrice))
+                                    <del class="price-old">{{$oneBookArtAndCulture->oldPrice}}</del>
+                                @endif
+                                @if(isset($oneBookArtAndCulture->discount) && ($oneBookArtAndCulture->finaldate > date("Y-m-d H:i:s")))
+                                    <span  class="price-discount">{{$oneBookArtAndCulture->discount}}%</span>
+                                @endif
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="single-slide">
+                @endforeach
+                {{--<div class="single-slide">
                     <div class="product-card">
                         <div class="product-header">
                             <a href="" class="author">
@@ -2686,7 +2815,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
         </div>
     </section>
@@ -2717,7 +2846,7 @@
     <!--=================================
         Home Blog
         ===================================== -->
-    <section class="section-margin">
+    {{--<section class="section-margin">
         <div class="container">
             <div class="section-title">
                 <h2>LATEST BLOGS</h2>
@@ -2819,7 +2948,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>--}}
     <!--=================================
         Footer
         ===================================== -->

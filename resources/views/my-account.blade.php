@@ -191,10 +191,12 @@
                                     <h3>Billing Address</h3>
                                     <address>
                                         <p><strong>{{Auth::user()->name}}</strong></p>
+                                        @if(isset($billingAddress[0]))
                                         <p>{{$billingAddress[0]->address1}}, <br>
                                             {{$billingAddress[0]->zip_code}}, <br>
                                             {{$billingAddress[0]->city}}</p>
                                         <p>Mobile: {{$billingAddress[0]->phone_no}}</p>
+                                        @endif
                                     </address>
                                     <a href="#" class="btn btn--primary"><i class="fa fa-edit"></i>Edit
                                         Address</a>

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\DealOfTheDay;
 use App\Http\Requests\SearchRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Product;
 
 class ShopController extends Controller
 {
@@ -13,10 +16,10 @@ class ShopController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
     //
     public function getIndex(){
@@ -29,35 +32,119 @@ class ShopController extends Controller
             $recInPage = 9;
         }
 
-        $products = '';
+        /*Сортировка по ценовому диапазону*/
+        $sliderRange = '';
+        if(isset($_COOKIE['sliderRange'])){
+            $sliderRange = json_decode($_COOKIE['sliderRange']);
+        }else{
+            $tempArray = array('from' => 0, 'to' => 700);
+            $sliderRange = json_encode($tempArray);
+        }
+
+        /*$products = DB::table('deal_of_the_days')->select('*')
+            ->rightJoin('products', 'deal_of_the_days.product_id', '=', 'products.id')
+            ->addSelect(DB::raw('(products.price / (1 + (deal_of_the_days.discount / 100))) as newprice'))
+            ->whereRaw("(products.price / (1 + (deal_of_the_days.discount / 100)))>$sliderRange->from")
+            ->whereRaw("(products.price / (1 + (deal_of_the_days.discount / 100)))<$sliderRange->to")
+            ->orderBy('name', 'asc')->paginate($recInPage);*//*
+            ->where('(newprice - price)', '>=', 1)*/
+            /*->whereBetween('newprice', [$sliderRange->from, $sliderRange->to])*/;/*
+            ->selectRaw('(price + discount) as newprice')
+            ->orderBy('name', 'asc')->paginate($recInPage);;*/
+
+        /*if(isset($_COOKIE['sortSelect'])){
+            switch ($_COOKIE['sortSelect']){
+                case "A-Z":
+                    $products = DB::table('products')
+                                ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                                ->orderBy('name', 'asc')->paginate($recInPage);
+                    break;
+                case "Z-A":
+                    $products = DB::table('products')
+                                ->orderBy('name', 'desc')
+                                ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                                ->paginate($recInPage);
+                    break;
+                case "Low->High":
+                    $products = DB::table('products')
+                                ->orderBy('price', 'asc')
+                                ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                                ->paginate($recInPage);
+                    break;
+                case "High->Low":
+                    $products = DB::table('products')
+                                ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                                ->orderBy('price', 'desc')->paginate($recInPage);
+                    break;
+                case "HighestRating":
+                    $products = DB::table('products')
+                                ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                                ->orderBy('rating', 'desc')->paginate($recInPage);
+                    break;
+                case "LowestRating":
+                    $products = DB::table('products')
+                                ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                                ->orderBy('rating', 'asc')->paginate($recInPage);
+                    break;
+                default:
+                    $products = DB::table('products')
+                                ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                                ->paginate($recInPage);
+            }
+
+        }else{
+            $products = DB::table('products')
+                        ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                        ->paginate($recInPage);
+        }*/
+
+        $orderByNameValue = '';
+        $orderByDirectionValue = '';
 
         if(isset($_COOKIE['sortSelect'])){
             switch ($_COOKIE['sortSelect']){
                 case "A-Z":
-                    $products = DB::table('products')->orderBy('name', 'asc')->paginate($recInPage);
+                    $orderByNameValue = 'name';
+                    $orderByDirectionValue = 'asc';
                     break;
                 case "Z-A":
-                    $products = DB::table('products')->orderBy('name', 'desc')->paginate($recInPage);
+                    $orderByNameValue = 'name';
+                    $orderByDirectionValue = 'desc';
                     break;
                 case "Low->High":
-                    $products = DB::table('products')->orderBy('price', 'asc')->paginate($recInPage);
+                    $orderByNameValue = 'newprice';
+                    $orderByDirectionValue = 'asc';
                     break;
                 case "High->Low":
-                    $products = DB::table('products')->orderBy('price', 'desc')->paginate($recInPage);
+                    $orderByNameValue = 'newprice';
+                    $orderByDirectionValue = 'desc';
                     break;
                 case "HighestRating":
-                    $products = DB::table('products')->orderBy('rating', 'desc')->paginate($recInPage);
+                    $orderByNameValue = 'rating';
+                    $orderByDirectionValue = 'desc';
                     break;
                 case "LowestRating":
-                    $products = DB::table('products')->orderBy('rating', 'asc')->paginate($recInPage);
+                    $orderByNameValue = 'rating';
+                    $orderByDirectionValue = 'asc';
                     break;
                 default:
-                    $products = DB::table('products')->paginate($recInPage);
+                    $orderByNameValue = 'name';
+                    $orderByDirectionValue = 'asc';
             }
 
         }else{
-            $products = DB::table('products')->paginate($recInPage);
+            $orderByNameValue = 'name';
+            $orderByDirectionValue = 'asc';
         }
+
+        $products = DB::table('deal_of_the_days')->select('*')
+            ->rightJoin('products', 'deal_of_the_days.product_id', '=', 'products.id')
+            ->addSelect(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2)) as newprice'))
+            ->where(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2))'), '>', $sliderRange->from)
+            ->where(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2))'), '<', $sliderRange->to)
+            ->orderBy($orderByNameValue, $orderByDirectionValue)->paginate($recInPage);
+
+        $products = \App::make('App\Libs\DealOfTheDayCheck')->DealOfTheDayCheck($products);
 
         return view('shop', compact('products', 'recInPage'));
     }

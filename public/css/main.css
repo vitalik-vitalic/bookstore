@@ -15131,7 +15131,7 @@ input[type="number"] {
   padding: 30px; }
   @media (min-width: 992px) {
     .product-details-modal {
-      padding: 60px; } }
+      padding: 10px; } }
   .product-details-modal .product-details-slider .single-slide img {
     width: 100%; }
 
@@ -21514,3 +21514,124 @@ p.form-messege {
           transform: rotate(90deg); }
   .accordion .card .card-body {
     padding: 0 30px 30px; }
+
+.shareholders-pagination ul{
+    list-style: none;
+    display: inline-block;
+    padding-left: 0;
+}
+.shareholders-pagination li {
+    display: inline-block;
+}
+
+/*Стиль для модального окна*/
+.modal-window{
+    color: black;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-left: -300px;
+    width: 850px;
+    height: 570px;
+    padding: 5px;
+    border: solid grey 1px;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 98;
+}
+
+/*Стиль для модального окна добавление акционера*/
+.modal-window-shareholder{
+    color: black;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-left: -300px;
+    width: 700px;
+    height: 200px;
+    padding: 10px;
+    border: solid grey 1px;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 98;
+}
+
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.61);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+}
+
+.modal-close-btn{
+    float: right;
+    display: block;
+}
+
+.button-clear {/*
+    position: absolute;*/
+    margin-left: -20px;
+    /*top: 15px;*/
+    /*left: 3%;*/
+    /*
+    width: 10px;
+    height: 10px;*/
+    /*cursor: pointer;*/
+}
+
+/*.edit-meeting-questions.textarea{
+width: 400px;
+height: 50px;
+}*/
+
+html {
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+}
+html, body {
+    /* For the loading indicator to be vertically centered ensure */
+    /* the html and body elements take up the full viewport */
+    min-height: 100%;
+}
+html.loading {
+    /* Replace #333 with the background-color of your choice */
+    /* Replace loading.gif with the loading image of your choice */
+    /*background: #dddddd url('../data_img/progress_bar3.gif') no-repeat 50% 50%;*/
+    background: #ffffff;
+
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+}
+body {
+    -webkit-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+html.loading body {
+    /* Make the contents of the body opaque during loading */
+    opacity: 0;
+
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+}
+
+.search-meeting-wrapper{
+    padding-left: 22.4px;
+    padding-right: 22.4px;
+}
+
+.search{
+    margin-left: 22.4px;
+}
+
+.newmeeting-cansel-button{
+    margin-left: 10px;
+}
+
+.new-meeting-buttons {
+    margin-top: 10px;
+}

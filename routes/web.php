@@ -32,6 +32,8 @@ Route::get('/searchAuthor/{authorFullName}', 'ShopController@searchAuthorIndex')
 Route::get('/searchPublisher/{publisherName}', 'ShopController@searchPublisherIndex');
 
 Route::get('/product-details/{id}', 'ProductDetailsController@getIndex')->name('product-details');
+Route::post('/product-details/{id}', 'ProductDetailsController@postReview');
+
 Route::get('/contact', 'ContactController@getIndex')->name('contact');
 Route::post('/contact', 'ContactController@postIndex');
 
@@ -48,6 +50,6 @@ Route::get('/blog', 'BlogController@getIndex')->name('blog');
 Route::get('/blog-details', 'BlogDetailsController@getIndex')->name('blog-details');
 Route::get('/my-account', 'MyAccountController@getIndex')->name('my-account');
 
-
+Route::post('/ajax/product-detail', 'Ajax\ProductDetailsModalController@getIndex');
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/

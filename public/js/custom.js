@@ -267,17 +267,47 @@ jQuery(document).ready(function($) {
         	--> Range Slider
         ---------------------------------------*/
         $(function() {
-            $(".sb-range-slider").slider({
+            var sliderRange = $('.sb-range-slider');
+
+            var sliderRangeFromValue = 1;
+            var sliderRangeToValue = 700;
+
+            var myObject = new Object();
+            myObject.from = sliderRangeFromValue;
+            myObject.to = sliderRangeToValue;
+
+            var sliderRangeValues = JSON.stringify(myObject);
+
+            var data = $.cookie('sliderRange');
+
+            if (data === null){
+                $.cookie('sliderRange',sliderRangeValues, { path: '/'});
+            }else{
+                //console.dir($.cookie('sliderRange'));
+                data =JSON.parse($.cookie('sliderRange'));
+                sliderRangeFromValue = data.from;
+                sliderRangeToValue = data.to;
+            }
+
+            sliderRange.slider({
                 range: true,
                 min: 0,
-                max: 753,
-                values: [80, 320],
+                max: 700,
+                values: [sliderRangeFromValue, sliderRangeToValue],
                 slide: function(event, ui) {
-                    $("#amount").val("£" + ui.values[0] + " - £" + ui.values[1]);
+                    $("#amount").val("BYN " + ui.values[0] + " - BYN " + ui.values[1]);
+                },
+                stop: function( event, ui ) {
+
+                    myObject.from = ui.values[0];
+                    myObject.to = ui.values[1];
+
+                    $.cookie('sliderRange',JSON.stringify(myObject), { path: '/'});
+                    document.location.reload(true);
                 }
             });
-            $("#amount").val("£" + $(".sb-range-slider").slider("values", 0) +
-                " - £" + $(".sb-range-slider").slider("values", 1));
+            $("#amount").val("BYN " + $(".sb-range-slider").slider("values", 0) +
+                " - BYN " + $(".sb-range-slider").slider("values", 1));
         });
 
         /*-------------------------------------
@@ -445,6 +475,7 @@ jQuery(document).ready(function($) {
             $this.html(event.strftime('<div class="single-countdown"><span class="single-countdown__time">%D</span><span class="single-countdown__text">Days</span></div><div class="single-countdown"><span class="single-countdown__time">%H</span><span class="single-countdown__text">Hours</span></div><div class="single-countdown"><span class="single-countdown__time">%M</span><span class="single-countdown__text">mins</span></div><div class="single-countdown"><span class="single-countdown__time">%S</span><span class="single-countdown__text">Secs</span></div>'));
         });
     });
+
     $('.color-list a').on('click', function(e) {
         e.preventDefault();
         var $this = $(this);

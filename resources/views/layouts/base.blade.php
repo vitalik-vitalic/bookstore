@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pustok - Book Store HTML Template</title>
+    <title>BookStore - Book Store HTML Template</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <!-- Use Minified Plugins Version For Fast Page Load -->
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/plugins.css')}}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{{asset('css/main.css')}}" />
@@ -24,7 +25,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 ">
                         <a href="{{asset('/')}}" class="site-brand">
-                            <img src="{{asset('image/logo.png')}}" alt="">
+                            <img src="{{asset('image/BookStore.png')}}" style="max-width: 181px; height: 39px;" alt="Logo" srcset="{{asset('image/BookStore.svg')}}">
                         </a>
                     </div>
                     <div class="col-lg-3">
@@ -231,7 +232,7 @@
                 <div class="row align-items-sm-end align-items-center">
                     <div class="col-md-4 col-7">
                         <a href="{{asset('/')}}" class="site-brand">
-                            <img src="{{asset('image/logo.png')}}" alt="">
+                            <img src="{{asset('image/BookStore.png')}}" style="max-width: 181px; height: 39px;" alt="Logo" srcset="{{asset('image/BookStore.svg')}}">
                         </a>
                     </div>
                     <div class="col-md-5 order-3 order-md-2">
@@ -364,7 +365,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-4">
                     <a href="{{asset('/')}}" class="site-brand">
-                        <img src="{{asset('image/logo.png')}}" alt="">
+                        <img src="{{asset('image/BookStore.png')}}" style="max-width: 181px; height: 39px;" alt="Logo" srcset="{{asset('image/BookStore.svg')}}">
                     </a>
                 </div>
                 <div class="col-lg-8">
@@ -437,7 +438,7 @@
             <div class=" col-xl-3 col-lg-4 col-sm-6">
                 <div class="single-footer pb--40">
                     <div class="brand-footer footer-title">
-                        <img src="{{asset('image/logo--footer.png')}}" alt="">
+                        <img src="{{asset('image/BookStore.png')}}" style="max-width: 181px; height: 39px;" alt="Logo" srcset="{{asset('image/BookStore.svg')}}">
                     </div>
                     <div class="footer-contact">
                         <p><span class="label">Address:</span><span class="text">Example Street 98, HH2 BacHa, New
@@ -504,9 +505,9 @@
             <a href="#" class="payment-block">
                 <img src="{{asset('image/icon/payment.png')}}" alt="">
             </a>
-            <p class="copyright-text">Copyright © 2019 <a href="#" class="author">Pustok</a>. All Right Reserved.
+            <p class="copyright-text">Copyright © 2020 <a href="#" class="author">BookStore</a>. All Right Reserved.
                 <br>
-                Design By Pustok</p>
+                Design By BookStore</p>
         </div>
     </div>
 </footer>

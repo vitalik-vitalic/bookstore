@@ -11,10 +11,10 @@ class BlogDetailsController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
     public function getIndex(){
         return view('blog-details');

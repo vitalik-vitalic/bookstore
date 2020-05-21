@@ -63,7 +63,163 @@ $(function() {
 
 });
 
+$(function() {
 
+    // Get the form.
+    var form = $('#review-form');
+
+    // Get the messages div.
+    var formMessages = $('.form-messege');
+
+    // Set up an event listener for the contact form.
+    $(form).submit(function(e) {
+        // Stop the browser from submitting the form.
+        e.preventDefault();
+
+        var rating = '';
+        switch($('input[name=star]:checked').attr('id')) {
+            case "star1":
+                rating = 5;
+                break;
+            case "star2":
+                rating = 4;
+                break;
+            case "star3":
+                rating = 3;
+                break;
+            case "star4":
+                rating = 2;
+                break;
+            case "star5":
+                rating = 1;
+                break;
+            default:
+                rating = 0;
+        }
+
+        // Serialize the form data.
+        var formData = $(form).serializeArray();
+        formData.push({'name': 'rating', 'value': rating});
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST'
+        });
+
+        // Submit the form using AJAX.
+        $.ajax({
+            type: 'POST',
+            url: $(form).attr('action'),
+            data: formData
+        })
+            .done(function(response) {
+                // Make sure that the formMessages div has the 'success' class.
+                $(formMessages).removeClass('error');
+                $(formMessages).addClass('success');
+
+                // Set the message text.
+                $(formMessages).text('Thank you for your review!');
+
+                console.dir(response);
+
+                // Clear the form.
+                $('#review-form input,#review-form textarea').val('');
+                document.location.reload(true);
+            })
+            .fail(function(data) {
+                // Make sure that the formMessages div has the 'error' class.
+
+                $(formMessages).removeClass('success');
+                $(formMessages).addClass('error');
+
+                $(formMessages).text('Oops! An error occured and your message could not be sent.');
+                console.dir(data);
+                console.dir('Oops! An error occured and your message could not be sent.');
+                //console.dir(response);
+
+                // Set the message text.
+                /*if (data.responseText !== '') {
+                    $(formMessages).text(data.responseText);
+                } else {
+                    $(formMessages).text('Oops! An error occured and your message could not be sent.');
+                }*/
+            });
+    });
+
+});
+
+$(function() {
+
+    /*Объектный литерал*/
+    /*Объектный литерал*/
+    var fx = {
+        "initModal" : function () {
+            if($('.modal-window').length ==0)
+            {
+                $('<div>').attr('id', 'jquery-overlay').appendTo('body');
+                return $('<div>').addClass('modal-window').appendTo('body');
+                /*return $('<div>').addClass('modal-window').insertAfter($('body'));*/
+            }else{
+                return $('.modal-window');
+            }
+        }
+    };
+
+    $('.quickModalBtn').click(function () {
+        //console.dir('THIS');
+        /*var data = $(this).attr('data-id');
+        var data2 = $(this).attr('data-question-id');*/
+        var data = $(this).attr('data-id');
+        var modal = fx.initModal();
+
+        $('.modal-window, .modal-backdrop').fadeIn('fast');
+
+        $('<a>').attr('href','#').addClass('modal-close-btn').html('&times;').click(function (e) {
+            e.preventDefault();
+            $('.modal-window').remove();
+            $('#jquery-overlay').remove();
+            $('.modal-window, .modal-backdrop').fadeOut('fast');
+            document.location.reload(true);
+        }).appendTo(modal);
+
+        /*console.dir(data);
+        return  -1;*/
+
+        /*$('.modal-window, .modal-backdrop').fadeIn('fast');
+
+        $('<a>').attr('href','#').addClass('modal-close-btn').html('<img src="/data_img/cross.svg">').click(function (e) {
+            e.preventDefault();
+            $('.modal-window').remove();
+            $('#jquery-overlay').remove();
+            $('.modal-window, .modal-backdrop').fadeOut('fast');
+        }).appendTo(modal);*/
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type: 'POST'
+        });
+
+        $.ajax({
+            url: "/ajax/product-detail",
+            type: "POST",
+            data: "id="+data,
+            success: function (data) {
+                //console.log("ok");
+                /*console.dir(data);*/
+                /*$.fancybox.open(data);*/
+                modal.append(data);
+            },
+            error: function (msg) {
+                console.log(msg);
+            }
+        });
+    });
+
+});
 
 /* 10. Mailchimp Ajax */
 

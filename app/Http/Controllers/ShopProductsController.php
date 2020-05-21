@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Catalog;
+use Illuminate\Support\Facades\DB;
 use function foo\func;
 
 class ShopProductsController extends Controller
 {
 
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
-    }
+    }*/
 
     //
     public function index($id = null)
@@ -25,6 +26,15 @@ class ShopProductsController extends Controller
             $recInPage = (int)$_COOKIE['rec_in_page'];
         }else{
             $recInPage = 9;
+        }
+
+        /*Сортировка по ценовому диапазону*/
+        $sliderRange = '';
+        if(isset($_COOKIE['sliderRange'])){
+            $sliderRange = json_decode($_COOKIE['sliderRange']);
+        }else{
+            $tempArray = array('from' => 0, 'to' => 700);
+            $sliderRange = json_encode($tempArray);
         }
 
         $catalogItem = Catalog::where('id',$id)->first();
@@ -40,6 +50,21 @@ class ShopProductsController extends Controller
         $tempArray = array();
         $orderByNameValue = '';
         $orderByDirectionValue = '';
+        /*$products = Product::all();
+        */
+
+        /*$products = Product::where('catalog_id',$id)
+            ->orderBy($orderByNameValue, $orderByDirectionValue)
+            ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+            ->paginate($recInPage);
+
+        foreach ($input as $key => $value) {
+            $i++;
+            // ->where('field_1', red_1); // Desired output
+            $listing->where("where(field_{$i},".$value."_1)");
+        }
+
+        dd($products);*/
 
         if(isset($_COOKIE['sortSelect'])){
             switch ($_COOKIE['sortSelect']){
@@ -52,11 +77,11 @@ class ShopProductsController extends Controller
                     $orderByDirectionValue = 'desc';
                     break;
                 case "Low->High":
-                    $orderByNameValue = 'price';
+                    $orderByNameValue = 'newprice';
                     $orderByDirectionValue = 'asc';
                     break;
                 case "High->Low":
-                    $orderByNameValue = 'price';
+                    $orderByNameValue = 'newprice';
                     $orderByDirectionValue = 'desc';
                     break;
                 case "HighestRating":
@@ -79,7 +104,17 @@ class ShopProductsController extends Controller
 
 
         if($isCatalogWithoutSubfolders){
-            $products = Product::where('catalog_id',$id)->orderBy($orderByNameValue, $orderByDirectionValue)->paginate($recInPage);
+            /*$products = Product::where('catalog_id',$id)
+                        ->orderBy($orderByNameValue, $orderByDirectionValue)
+                        ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                        ->paginate($recInPage);*/
+            $products = DB::table('deal_of_the_days')->select('*')
+                ->rightJoin('products', 'deal_of_the_days.product_id', '=', 'products.id')
+                ->where('catalog_id',$id)
+                ->addSelect(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2)) as newprice'))
+                ->where(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2))'), '>', $sliderRange->from)
+                ->where(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2))'), '<', $sliderRange->to)
+                ->orderBy($orderByNameValue, $orderByDirectionValue)->paginate($recInPage);
         }else{
             $catalogItems = Catalog::where('parent_id',$id)->get();
 
@@ -87,9 +122,23 @@ class ShopProductsController extends Controller
                 array_push($tempArray,$item->id);
             }
 
-            $products = Product::whereIn('catalog_id', $tempArray)->orderBy($orderByNameValue, $orderByDirectionValue)->paginate($recInPage);
+            /*$products = Product::whereIn('catalog_id', $tempArray)
+                        ->orderBy($orderByNameValue, $orderByDirectionValue)
+                        ->whereBetween('price', [$sliderRange->from, $sliderRange->to])
+                        ->paginate($recInPage);*/
+
+            $products = DB::table('deal_of_the_days')->select('*')
+                ->rightJoin('products', 'deal_of_the_days.product_id', '=', 'products.id')
+                ->whereIn('catalog_id', $tempArray)
+                ->addSelect(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2)) as newprice'))
+                ->where(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2))'), '>', $sliderRange->from)
+                ->where(DB::raw('if(discount is not null  and (finaldate>NOW()), ROUND((price / (1 + (discount / 100))),2), ROUND(price,2))'), '<', $sliderRange->to)
+                ->orderBy($orderByNameValue, $orderByDirectionValue)->paginate($recInPage);
+
         }
 
+        $products = \App::make('App\Libs\DealOfTheDayCheck')->DealOfTheDayCheck($products);
+        //dd($products);
         return view('shop', compact('products'));
     }
 

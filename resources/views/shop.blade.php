@@ -184,17 +184,23 @@
                                                 <a href="{{asset('/compare')}}" class="single-btn">
                                                     <i class="fas fa-random"></i>
                                                 </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
+                                                {{--<input type="button" data-id="{{$product->id}}" class="quickModalBtn" value="Modal2">--}}
+                                                <button data-id="{{$product->id}}" class="quickModalBtn single-btn"><i class="fas fa-eye"></i></button>
+                                                {{--<a href="#" data-id="{{$product->id}}" --}}{{--data-toggle="modal" data-target="#quickModal"--}}{{--
+                                                   class="quickModalBtn single-btn">
                                                     <i class="fas fa-eye"></i>
-                                                </a>
+                                                </a>--}}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="price-block">
-                                        <span class="price">{{$product->price}}</span>
-                                        <del class="price-old">{{$product->price}}</del>
-                                        <span class="price-discount">0%</span>
+                                        <span class="price-new">{{$product->price}}</span>
+                                        @if(isset($product->oldPrice))
+                                            <del class="price-old">{{$product->oldPrice}}</del>
+                                        @endif
+                                        @if(isset($product->discount) && ($product->finaldate > date("Y-m-d H:i:s")))
+                                            <span  class="price-discount">{{$product->discount}}%</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -214,9 +220,19 @@
                                         <p>{{$product->small_body}}</p>
                                     </article>
                                     <div class="price-block">
-                                        <span class="price">{{$product->price}}</span>
-                                        <del class="price-old">{{$product->price}}</del>
-                                        <span class="price-discount">0%</span>
+                                        <span class="price-new">{{$product->price}}</span>
+                                        @if(isset($product->oldPrice))
+                                            <del class="price-old">{{$product->oldPrice}}</del>
+                                        @endif
+                                        {{--<span class="price"></span>
+                                        @if(isset($product->oldPrice))
+
+                                            <del class="price-old">£91.86</del>
+                                            <del class="price-old">{{$product->oldPrice}}</del>
+                                        @else
+                                            <del class="price-old">{{$product->price}}</del>
+                                        @endif
+                                        <span class="price-discount">0%</span>--}}
                                     </div>
                                     <div class="rating-block">
                                         @for($i=1;$i<=5;$i++)
@@ -251,7 +267,7 @@
                     </div>
                 </div>
                 <!-- Modal -->
-                <div class="modal fade modal-quick-view" id="quickModal" tabindex="-1" role="dialog"
+                {{--<div class="modal fade modal-quick-view" id="quickModal" tabindex="-1" role="dialog"
                      aria-labelledby="quickModal" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -389,7 +405,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
             <div class="col-lg-3  mt--40 mt-lg--0">
                 <div class="inner-page-sidebar">

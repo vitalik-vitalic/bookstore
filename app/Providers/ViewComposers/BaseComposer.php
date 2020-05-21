@@ -8,6 +8,7 @@ use App\Catalog;
 use App\MenuTitles;
 use App\Information;
 use App\Extras;
+use DB;
 
 class BaseComposer
 {
@@ -16,13 +17,14 @@ class BaseComposer
         /*Categories items*/
         $categories = Catalog::orderBy('name')->get();
         /*Main menu items*/
-        $menus = MenuTitles::orderBy('id')->get();
+        $menus = MenuTitles::orderBy('id')->where('name', '!=' , 'Blog')->get();
         /*Information items*/
         $information = Information::orderBy('id')->get();
         /*Extras items*/
         $extras = Extras::orderBy('id')->get();
 
         $arr_obj = \App::make('App\Libs\Cook')->cook_arr();
+        $arr_obj = \App::make('App\Libs\DealOfTheDayCheck')->DealOfTheDayCheck($arr_obj);
 
         $view->with('result', $categories)
              ->with('menus', $menus)

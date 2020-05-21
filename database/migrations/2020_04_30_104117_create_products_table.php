@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->string('code');
             $table->string('availability');
             $table->string('description');
-            $table->string('price');
+            $table->float('price');
             $table->text('body');
             $table->string('small_body');
             $table->enum('showhide',['0','1'])->default('1');
